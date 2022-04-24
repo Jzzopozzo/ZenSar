@@ -1,0 +1,791 @@
+Microsoft Windows [Version 10.0.17134.829]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\kkwtp-pc>sqlplus system/0
+
+SQL*Plus: Release 11.2.0.2.0 Production on Wed Jul 3 10:11:04 2019
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> @C:\oraclexe\app\oracle\product\11.2.0\server\rdbms\admin\utlsampl
+Disconnected from Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+C:\Users\kkwtp-pc>sqlplus scott/tiger
+
+SQL*Plus: Release 11.2.0.2.0 Production on Wed Jul 3 10:11:38 2019
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> select tname from tab';
+ERROR:
+ORA-01756: quoted string not properly terminated
+
+
+SQL> select tname from tab;
+
+TNAME
+------------------------------
+BONUS
+DEPT
+EMP
+SALGRADE
+
+SQL> select greatest('06-06-2091', '06-06-1992', '06-06-2321');
+select greatest('06-06-2091', '06-06-1992', '06-06-2321')
+                                                        *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select greatest('06-06-2091', '06-06-1992', '06-06-2321')from dual;
+
+GREATEST('
+----------
+06-06-2321
+
+SQL> SELECT DEPTNO FROM DEPT WHERE DNAME='SALES';
+
+    DEPTNO
+----------
+        30
+
+SQL> SELECT * FROM EMP WHERE DEPTNO= (SELECT DEPTNO FROM DEPT WHERE DNAME='SALES');
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300
+        30
+
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500
+        30
+
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+        30
+
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0
+        30
+
+      7900 JAMES      CLERK           7698 03-DEC-81        950
+        30
+
+
+6 rows selected.
+
+SQL> SET LINESIZE 100
+SQL> SET PAGESIZE 100
+SQL> SELECT ENAME FROM EMP WHERE (SELECT DEPTNO FROM DEPT WHERE ENAME= 'MILLER');
+SELECT ENAME FROM EMP WHERE (SELECT DEPTNO FROM DEPT WHERE ENAME= 'MILLER')
+                                                                          *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> SELECT DEPTNO FROM DEPT WHERE ENAME= 'MILLER';
+SELECT DEPTNO FROM DEPT WHERE ENAME= 'MILLER'
+                              *
+ERROR at line 1:
+ORA-00904: "ENAME": invalid identifier
+
+
+SQL> SELECT * FROM DEPTNO
+  2  ;
+SELECT * FROM DEPTNO
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT * FROM DEPT;
+
+    DEPTNO DNAME          LOC
+---------- -------------- -------------
+        10 ACCOUNTING     NEW YORK
+        20 RESEARCH       DALLAS
+        30 SALES          CHICAGO
+        40 OPERATIONS     BOSTON
+
+SQL> SELECT * FROM EMP WHERE ENAME= 'MILLER';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+SQL> SELECT ENAME FROM EMP WHERE DEPTNO= (SELECT * FROM EMP WHERE ENAME= 'MILLER');
+SELECT ENAME FROM EMP WHERE DEPTNO= (SELECT * FROM EMP WHERE ENAME= 'MILLER')
+                                     *
+ERROR at line 1:
+ORA-00913: too many values
+
+
+SQL> SELECT * FROM EMP WHERE DEPTNO= (SELECT DEPTNO FROM DEPT WHERE DNAME='SALES');
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+
+6 rows selected.
+
+SQL> SELECT * FROM EMP WHERE DEPTNO= (SELECT DEPTNO FROM EMP WHERE ENAME= 'SALES');
+
+no rows selected
+
+SQL> SELECT * FROM EMP WHERE DEPTNO= (SELECT DEPTNO FROM EMP WHERE ENAME= 'MILLER');
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+SQL> SELECT * FROM EMP WHERE JOB= (SELECT JOB FROM EMP WHERE ENAME= 'SCOTT)';
+SELECT * FROM EMP WHERE JOB= (SELECT JOB FROM EMP WHERE ENAME= 'SCOTT)'
+                              *
+ERROR at line 1:
+ORA-00921: unexpected end of SQL command
+
+
+SQL> SELECT * FROM EMP WHERE JOB= (SELECT JOB FROM EMP WHERE ENAME= 'SCOTT');
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+SQL> SELECT * FROM EMP WHERE JOB=(SELECT JOB FROM EMP WHERE DEPTNO= 30);
+SELECT * FROM EMP WHERE JOB=(SELECT JOB FROM EMP WHERE DEPTNO= 30)
+                             *
+ERROR at line 1:
+ORA-01427: single-row subquery returns more than one row
+
+
+SQL> SELECT JOB FROM EMP WHERE DEPTNO= 30;
+
+JOB
+---------
+SALESMAN
+SALESMAN
+SALESMAN
+MANAGER
+SALESMAN
+CLERK
+
+6 rows selected.
+
+SQL> SELECT * FROM EMP WHERE JOB=(SELECT JOB FROM EMP WHERE DEPTNO= 30);
+SELECT * FROM EMP WHERE JOB=(SELECT JOB FROM EMP WHERE DEPTNO= 30)
+                             *
+ERROR at line 1:
+ORA-01427: single-row subquery returns more than one row
+
+
+SQL> SELECT * FROM EMP WHERE DEPTNO= 10 AND JOB= (SELECT JOB FROM EMP WHERE DEPTNO= 30);
+SELECT * FROM EMP WHERE DEPTNO= 10 AND JOB= (SELECT JOB FROM EMP WHERE DEPTNO= 30)
+                                             *
+ERROR at line 1:
+ORA-01427: single-row subquery returns more than one row
+
+
+SQL> SELECT * FROM EMP WHERE DEPTNO= 10 AND JOB IN (SELECT JOB FROM EMP WHERE DEPTNO= 30);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+SQL> SELECT * FROM EMP WHERE DEPTNO= 10 AND JOB NOT IN (SELECT JOB FROM EMP WHERE DEPTNO= 30);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+
+SQL> SELECT * FROM EMP WHERE DEPTNO= 20 AND COUNT(EMPNO)> 2;
+SELECT * FROM EMP WHERE DEPTNO= 20 AND COUNT(EMPNO)> 2
+                                       *
+ERROR at line 1:
+ORA-00934: group function is not allowed here
+
+
+SQL>
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE DEPTNO= 20
+  4  GROUP BY DEPTNO
+  5  HAVING COUNT(EMPNO)> 2;
+SELECT *
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL> HAVING COUNT(EMPNO)> 2;
+SP2-0734: unknown command beginning "HAVING COU..." - rest of line ignored.
+SQL> SELECT DEPTNO
+  2  FROM EMP
+  3  WHERE DEPTNO= 20
+  4  GROUP BY DEPTNO
+  5  ^Z
+Disconnected from Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+C:\Users\kkwtp-pc>sqlplus scott/tiger
+
+SQL*Plus: Release 11.2.0.2.0 Production on Wed Jul 3 10:56:52 2019
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL>
+SQL> SELECT DEPTNO
+  2  FROM EMP
+  3  WHERE DEPTNO= 20
+  4  GROUP BY DEPTNO
+  5  HAVING COUNT(EMPNO)> 2;
+
+    DEPTNO
+----------
+        20
+
+SQL>
+SQL> SELECT DEPTNO
+  2  FROM EMP
+  3  WHERE DEPTNO= 20
+  4  GROUP BY DEPTNO
+  5  ;
+
+    DEPTNO
+----------
+        20
+
+SQL> SELECT DEPTNO, ENAME
+  2  FROM EMP
+  3  WHERE DEPTNO= 20
+  4  GROUP BY DEPTNO
+  5  HAVING COUNT(EMPNO)> 2;
+SELECT DEPTNO, ENAME
+               *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL> SELECT * FROM EMP WHERE EXISTS(SELECT * FROM EMP WHERE DEPTNO= 20 AND COUNT(EMP)> 2)
+  2  ;
+SELECT * FROM EMP WHERE EXISTS(SELECT * FROM EMP WHERE DEPTNO= 20 AND COUNT(EMP)> 2)
+                                                                      *
+ERROR at line 1:
+ORA-00934: group function is not allowed here
+
+
+SQL> SELECT COUNT(EMPNO)> 20 AND DEPTNO= 20;
+SELECT COUNT(EMPNO)> 20 AND DEPTNO= 20
+                   *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT FROM EMP WHERE COUNT(EMPNO)> 20 AND DEPTNO= 20;
+SELECT FROM EMP WHERE COUNT(EMPNO)> 20 AND DEPTNO= 20
+       *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> SELECT * FROM EMP WHERE COUNT(EMPNO)> 20 AND DEPTNO= 20;
+SELECT * FROM EMP WHERE COUNT(EMPNO)> 20 AND DEPTNO= 20
+                        *
+ERROR at line 1:
+ORA-00934: group function is not allowed here
+
+
+SQL> SELECT COUNT(EMPNO) * FROM EMP WHERE 20 AND DEPTNO= 20;
+SELECT COUNT(EMPNO) * FROM EMP WHERE 20 AND DEPTNO= 20
+                      *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> SELECT COUNT(EMPNO) FROM EMP WHERE 20 AND DEPTNO= 20;
+SELECT COUNT(EMPNO) FROM EMP WHERE 20 AND DEPTNO= 20
+                                      *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> SELECT COUNT(EMPNO) FROM EMP WHERE DEPTNO= 20;
+
+COUNT(EMPNO)
+------------
+           5
+
+SQL> SELECT * FROM EMP WHERE EXISTS(( SELECT COUNT(EMPNO) FROM EMP WHERE DEPTNO= 20)> 2);
+SELECT * FROM EMP WHERE EXISTS(( SELECT COUNT(EMPNO) FROM EMP WHERE DEPTNO= 20)> 2)
+                                                                               *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> SELECT * FROM EMP WHERE EXISTS (SELECT COUNT(EMPNO) FROM EMP WHERE DEPTNO= 20)> 2;
+SELECT * FROM EMP WHERE EXISTS (SELECT COUNT(EMPNO) FROM EMP WHERE DEPTNO= 20)> 2
+                                                                              *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> SELECT * FROM EMP WHERE EXISTS ((SELECT COUNT(EMPNO) FROM EMP WHERE DEPTNO= 20)> 2);
+SELECT * FROM EMP WHERE EXISTS ((SELECT COUNT(EMPNO) FROM EMP WHERE DEPTNO= 20)> 2)
+                                                                               *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> SELECT * FROM EMP WHERE EXISTS ((SELECT COUNT(EMPNO) FROM EMP WHERE DEPTNO= 20)> 2));
+SELECT * FROM EMP WHERE EXISTS ((SELECT COUNT(EMPNO) FROM EMP WHERE DEPTNO= 20)> 2))
+                                                                               *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> SELECT * FROM EMP WHERE EXISTS ((SELECT COUNT(EMPNO) FROM EMP WHERE DEPTNO= 20))> 2);
+SELECT * FROM EMP WHERE EXISTS ((SELECT COUNT(EMPNO) FROM EMP WHERE DEPTNO= 20))> 2)
+                                                                                *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> SELECT DEPTNOSELECT DEPTNO
+  2  FROM EMP
+  3  WHERE DEPTNO= 20
+  4  GROUP BY DEPTNO
+  5  HAVING COUNT(EMPNO)> 2;;
+HAVING COUNT(EMPNO)> 2;
+                      *
+ERROR at line 5:
+ORA-00911: invalid character
+
+
+SQL> SELECT DEPTNO
+  2  FROM EMP
+  3  WHERE DEPTNO= 20
+  4  GROUP BY DEPTNO
+  5  HAVING COUNT(EMPNO)> 2;
+
+    DEPTNO
+----------
+        20
+
+SQL> SELECT * FROM EMP WHERE EXISTS SELECT DEPTNO
+  2  FROM EMP
+  3  WHERE DEPTNO= 20
+  4  GROUP BY DEPTNO
+  5  HAVING COUNT(EMPNO)> 2;
+SELECT * FROM EMP WHERE EXISTS SELECT DEPTNO
+                               *
+ERROR at line 1:
+ORA-00906: missing left parenthesis
+
+
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE EXISTS(SELECT DEPTNO
+  4  FROM EMP
+  5  WHERE DEPTNO= 20
+  6  GROUP BY DEPTNO
+  7  HAVING COUNT(EMPNO)> 2);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800
+        20
+
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300
+        30
+
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975
+        20
+
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400
+        30
+
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450
+        10
+
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000
+        20
+
+      7839 KING       PRESIDENT            17-NOV-81       5000
+        10
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0
+        30
+
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100
+        20
+
+      7900 JAMES      CLERK           7698 03-DEC-81        950
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7902 FORD       ANALYST         7566 03-DEC-81       3000
+        20
+
+      7934 MILLER     CLERK           7782 23-JAN-82       1300
+        10
+
+
+14 rows selected.
+
+SQL> SET LINESIZE 100
+SQL> SET PAGESIZE 100
+SQL> SELECT * FROM EMP WHERE (SELECT COUNT(*) FROM EMP WHERE DEPTNO= 20)> 2;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+14 rows selected.
+
+SQL> SELECT MAX(SAL) FROM EMP ;
+
+  MAX(SAL)
+----------
+      5000
+
+SQL> SELECT ENAME, MAX(SAL) FROM EMP ;
+SELECT ENAME, MAX(SAL) FROM EMP
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1* SELECT ENAME, MAX(SAL) FROM EMP
+SQL> SELECT ENAME FROM EMP WHERE SAL=
+  2  (SELECT MAX(SAL)
+  3  FROM EMP);
+
+ENAME
+----------
+KING
+
+SQL> SELECT name, MAX(salary) AS salary
+  2    FROM employee
+  3   WHERE salary < (SELECT MAX(salary)
+  4                   FROM employee);
+  FROM employee
+       *
+ERROR at line 2:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT ENAME, MAX(SALARY) AS Salary
+  2  FROM EMP
+  3  WHERE SAL<(SELECT MAX(SAL) FROM EMP);
+SELECT ENAME, MAX(SALARY) AS Salary
+                  *
+ERROR at line 1:
+ORA-00904: "SALARY": invalid identifier
+
+
+SQL> SELECT ENAME, MAX(SAL) AS SALARY
+  2  FROM EMP
+  3  WHERE SAL<(SELECT MAX(SAL) FROM EMP);
+SELECT ENAME, MAX(SAL) AS SALARY
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function
+
+
+SQL> SELECT SAL FROM EMP WHERE SAL< MAX(SAL);
+SELECT SAL FROM EMP WHERE SAL< MAX(SAL)
+                               *
+ERROR at line 1:
+ORA-00934: group function is not allowed here
+
+
+SQL> SELECT SAL FROM EMP HAVING SAL< MAX(SAL);
+SELECT SAL FROM EMP HAVING SAL< MAX(SAL)
+                           *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL> SELECT * FROM EMP HAVING SAL< MAX(SAL);
+SELECT * FROM EMP HAVING SAL< MAX(SAL)
+                         *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL> SELECT ENAME FROM EMP GROUP BY ENAME HAVING SAL< MAX(SAL);
+SELECT ENAME FROM EMP GROUP BY ENAME HAVING SAL< MAX(SAL)
+                                            *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL> SELECT MAX(SAL) FROM EMP;
+
+  MAX(SAL)
+----------
+      5000
+
+SQL> SELECT SAL< MAX(SAL) FROM EMP;
+SELECT SAL< MAX(SAL) FROM EMP
+          *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT SAL AS SALARY FROM EMP HAVING SAL< MAX(SAL);
+SELECT SAL AS SALARY FROM EMP HAVING SAL< MAX(SAL)
+                                     *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression
+
+
+SQL> SELECT SAL AS SALARY FROM EMP GROUP BY SAL HAVING SAL< MAX(SAL);
+
+no rows selected
+
+SQL> SELECT SAL AS SALARY GROUP BY SAL HAVING SAL< MAX(SAL);
+SELECT SAL AS SALARY GROUP BY SAL HAVING SAL< MAX(SAL)
+                     *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT SAL AS SALARY FROM EMP GROUP BY SAL HAVING SAL< MAX(SAL);
+
+no rows selected
+
+SQL> SELECT MAX(SAL) FROM EMP WHERE SAL!=
+  2  (SELECT MAX(SAL) FROM EMP);
+
+  MAX(SAL)
+----------
+      3000
+
+SQL> SELECT * FROM EMP WHERE SAL=
+  2  SELECT MAX(SAL) FROM EMP WHERE SAL!=
+  3  (SELECT MAX(SAL) FROM EMP);
+SELECT MAX(SAL) FROM EMP WHERE SAL!=
+*
+ERROR at line 2:
+ORA-00936: missing expression
+
+
+SQL> SELECT * FROM EMP WHERE SAL=
+  2  (SELECT MAX(SAL) FROM EMP WHERE SAL!=
+  3  (SELECT MAX(SAL) FROM EMP));
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+SQL> (SELECT MAX(SAL) FROM EMP WHERE SAL=
+  2  (SELECT MAX(SAL) FROM EMP WHERE SAL<
+  3  (SELECT MAX(SAL) FROM EMP));
+(SELECT MAX(SAL) FROM EMP))
+                          *
+ERROR at line 3:
+ORA-00907: missing right parenthesis
+
+
+SQL> SELECT * FROM EMP WHERE SAL=
+  2  (SELECT MAX(SAL) FROM EMP WHERE SAL!=
+  3  ((SELECT MAX(SAL) FROM EMP WHERE SAL!=
+  4  (SELECT MAX(SAL) FROM EMP)));
+(SELECT MAX(SAL) FROM EMP WHERE SAL!=
+ *
+ERROR at line 2:
+ORA-00921: unexpected end of SQL command
+
+
+SQL> SELECT * FROM EMP WHERE SAL=
+  2  (SELECT MAX(SAL) FROM EMP WHERE SAL!=
+  3  ((SELECT MAX(SAL) FROM EMP WHERE SAL!=
+  4  (SELECT MAX(SAL) FROM EMP)));
+(SELECT MAX(SAL) FROM EMP WHERE SAL!=
+ *
+ERROR at line 2:
+ORA-00921: unexpected end of SQL command
+
+
+SQL> SELECT * FROM EMP WHERE SAL=
+  2  (SELECT MAX(SAL) FROM EMP WHERE SAL!=
+  3  (SELECT MAX(SAL) FROM EMP WHERE SAL!=
+  4  (SELECT MAX(SAL) FROM EMP)));
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+
+SQL> SELECT * FROM EMP WHERE SAL=
+  2  (SELECT MAX(SAL) FROM EMP WHERE SAL<
+  3  (SELECT MAX(SAL) FROM EMP WHERE SAL<
+  4  (SELECT MAX(SAL) FROM EMP)));
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+
+SQL> SELECT ROWNUM, ENAME, SAL FROM EMP;
+
+    ROWNUM ENAME             SAL
+---------- ---------- ----------
+         1 SMITH             800
+         2 ALLEN            1600
+         3 WARD             1250
+         4 JONES            2975
+         5 MARTIN           1250
+         6 BLAKE            2850
+         7 CLARK            2450
+         8 SCOTT            3000
+         9 KING             5000
+        10 TURNER           1500
+        11 ADAMS            1100
+        12 JAMES             950
+        13 FORD             3000
+        14 MILLER           1300
+
+14 rows selected.
+
+SQL> SELECT ROWNUM, ENAME, SAL FROM EMP
+  2  ORDER BY SAL DESC;
+
+    ROWNUM ENAME             SAL
+---------- ---------- ----------
+         9 KING             5000
+        13 FORD             3000
+         8 SCOTT            3000
+         4 JONES            2975
+         6 BLAKE            2850
+         7 CLARK            2450
+         2 ALLEN            1600
+        10 TURNER           1500
+        14 MILLER           1300
+         3 WARD             1250
+         5 MARTIN           1250
+        11 ADAMS            1100
+        12 JAMES             950
+         1 SMITH             800
+
+14 rows selected.
+
+SQL>
+SQL> SELECT * FROM EMP
+  2  WHERE SAL= (
+  3  select min(sal) from
+  4  (SELECT SAL FROM EMP ORDER BY SAL DESC)
+  5  WHERE ROWNUM< 4);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+SQL> SELECT * FROM EMP
+  2  WHERE SAL= (
+  3  select min(sal) from
+  4  (SELECT DISTINCT SAL FROM EMP ORDER BY SAL DESC)
+  5  WHERE ROWNUM< 4);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+
+SQL> SELECT *FROM INCR;
+SELECT *FROM INCR
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT TNAME FROM TAB;
+
+TNAME
+------------------------------
+BONUS
+DEPT
+EMP
+SALGRADE
+
+SQL> SELECT *FROM BONUS;
+
+no rows selected
+
+SQL> CREATE TABLE INCR;
+CREATE TABLE INCR
+                *
+ERROR at line 1:
+ORA-00906: missing left parenthesis
+
+
+SQL>

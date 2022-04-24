@@ -1,0 +1,2476 @@
+Microsoft Windows [Version 10.0.17134.829]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\kkwtp-pc>sqlplus
+
+SQL*Plus: Release 11.2.0.2.0 Production on Tue Jul 2 10:34:19 2019
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+Enter user-name: system
+Enter password:
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> @C:\oraclexe\app\oracle\product\11.2.0\server\rdbms\admin\utlsampl
+Disconnected from Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+C:\Users\kkwtp-pc>
+C:\Users\kkwtp-pc>sqlplus system/0
+
+SQL*Plus: Release 11.2.0.2.0 Production on Tue Jul 2 10:34:40 2019
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> select tname from tab;
+
+TNAME
+------------------------------
+AQ$DEF$_AQCALL
+AQ$DEF$_AQERROR
+AQ$_DEF$_AQCALL_F
+AQ$_DEF$_AQERROR_F
+AQ$_INTERNET_AGENTS
+AQ$_INTERNET_AGENT_PRIVS
+AQ$_QUEUES
+AQ$_QUEUE_TABLES
+AQ$_SCHEDULES
+CATALOG
+COL
+
+TNAME
+------------------------------
+DEF$_AQCALL
+DEF$_AQERROR
+DEF$_CALLDEST
+DEF$_DEFAULTDEST
+DEF$_DESTINATION
+DEF$_ERROR
+DEF$_LOB
+DEF$_ORIGIN
+DEF$_PROPAGATOR
+DEF$_PUSHED_TRANSACTIONS
+HELP
+
+TNAME
+------------------------------
+LOGMNRC_DBNAME_UID_MAP
+LOGMNRC_GSBA
+LOGMNRC_GSII
+LOGMNRC_GTCS
+LOGMNRC_GTLO
+LOGMNRP_CTAS_PART_MAP
+LOGMNRT_MDDL$
+LOGMNR_AGE_SPILL$
+LOGMNR_ATTRCOL$
+LOGMNR_ATTRIBUTE$
+LOGMNR_CCOL$
+
+TNAME
+------------------------------
+LOGMNR_CDEF$
+LOGMNR_COL$
+LOGMNR_COLTYPE$
+LOGMNR_DICTIONARY$
+LOGMNR_DICTSTATE$
+LOGMNR_ENC$
+LOGMNR_ERROR$
+LOGMNR_FILTER$
+LOGMNR_GLOBAL$
+LOGMNR_GT_TAB_INCLUDE$
+LOGMNR_GT_USER_INCLUDE$
+
+TNAME
+------------------------------
+LOGMNR_GT_XID_INCLUDE$
+LOGMNR_ICOL$
+LOGMNR_IND$
+LOGMNR_INDCOMPART$
+LOGMNR_INDPART$
+LOGMNR_INDSUBPART$
+LOGMNR_INTEGRATED_SPILL$
+LOGMNR_KOPM$
+LOGMNR_LOB$
+LOGMNR_LOBFRAG$
+LOGMNR_LOG$
+
+TNAME
+------------------------------
+LOGMNR_LOGMNR_BUILDLOG
+LOGMNR_NTAB$
+LOGMNR_OBJ$
+LOGMNR_OPQTYPE$
+LOGMNR_PARAMETER$
+LOGMNR_PARTOBJ$
+LOGMNR_PROCESSED_LOG$
+LOGMNR_PROPS$
+LOGMNR_REFCON$
+LOGMNR_RESTART_CKPT$
+LOGMNR_RESTART_CKPT_TXINFO$
+
+TNAME
+------------------------------
+LOGMNR_SEED$
+LOGMNR_SESSION$
+LOGMNR_SESSION_ACTIONS$
+LOGMNR_SESSION_EVOLVE$
+LOGMNR_SPILL$
+LOGMNR_SUBCOLTYPE$
+LOGMNR_TAB$
+LOGMNR_TABCOMPART$
+LOGMNR_TABPART$
+LOGMNR_TABSUBPART$
+LOGMNR_TS$
+
+TNAME
+------------------------------
+LOGMNR_TYPE$
+LOGMNR_UID$
+LOGMNR_USER$
+LOGSTDBY$APPLY_MILESTONE
+LOGSTDBY$APPLY_PROGRESS
+LOGSTDBY$EDS_TABLES
+LOGSTDBY$EVENTS
+LOGSTDBY$FLASHBACK_SCN
+LOGSTDBY$HISTORY
+LOGSTDBY$PARAMETERS
+LOGSTDBY$PLSQL
+
+TNAME
+------------------------------
+LOGSTDBY$SCN
+LOGSTDBY$SKIP
+LOGSTDBY$SKIP_SUPPORT
+LOGSTDBY$SKIP_TRANSACTION
+MVIEW$_ADV_AJG
+MVIEW$_ADV_BASETABLE
+MVIEW$_ADV_CLIQUE
+MVIEW$_ADV_ELIGIBLE
+MVIEW$_ADV_EXCEPTIONS
+MVIEW$_ADV_FILTER
+MVIEW$_ADV_FILTERINSTANCE
+
+TNAME
+------------------------------
+MVIEW$_ADV_FJG
+MVIEW$_ADV_GC
+MVIEW$_ADV_INFO
+MVIEW$_ADV_JOURNAL
+MVIEW$_ADV_LEVEL
+MVIEW$_ADV_LOG
+MVIEW$_ADV_OUTPUT
+MVIEW$_ADV_PARAMETERS
+MVIEW$_ADV_PLAN
+MVIEW$_ADV_PRETTY
+MVIEW$_ADV_ROLLUP
+
+TNAME
+------------------------------
+MVIEW$_ADV_SQLDEPEND
+MVIEW$_ADV_TEMP
+MVIEW$_ADV_WORKLOAD
+MVIEW_EVALUATIONS
+MVIEW_EXCEPTIONS
+MVIEW_FILTER
+MVIEW_FILTERINSTANCE
+MVIEW_LOG
+MVIEW_RECOMMENDATIONS
+MVIEW_WORKLOAD
+OL$
+
+TNAME
+------------------------------
+OL$HINTS
+OL$NODES
+PRODUCT_PRIVS
+PRODUCT_USER_PROFILE
+PUBLICSYN
+REPCAT$_AUDIT_ATTRIBUTE
+REPCAT$_AUDIT_COLUMN
+REPCAT$_COLUMN_GROUP
+REPCAT$_CONFLICT
+REPCAT$_DDL
+REPCAT$_EXCEPTIONS
+
+TNAME
+------------------------------
+REPCAT$_EXTENSION
+REPCAT$_FLAVORS
+REPCAT$_FLAVOR_OBJECTS
+REPCAT$_GENERATED
+REPCAT$_GROUPED_COLUMN
+REPCAT$_INSTANTIATION_DDL
+REPCAT$_KEY_COLUMNS
+REPCAT$_OBJECT_PARMS
+REPCAT$_OBJECT_TYPES
+REPCAT$_PARAMETER_COLUMN
+REPCAT$_PRIORITY
+
+TNAME
+------------------------------
+REPCAT$_PRIORITY_GROUP
+REPCAT$_REFRESH_TEMPLATES
+REPCAT$_REPCAT
+REPCAT$_REPCATLOG
+REPCAT$_REPCOLUMN
+REPCAT$_REPGROUP_PRIVS
+REPCAT$_REPOBJECT
+REPCAT$_REPPROP
+REPCAT$_REPSCHEMA
+REPCAT$_RESOLUTION
+REPCAT$_RESOLUTION_METHOD
+
+TNAME
+------------------------------
+REPCAT$_RESOLUTION_STATISTICS
+REPCAT$_RESOL_STATS_CONTROL
+REPCAT$_RUNTIME_PARMS
+REPCAT$_SITES_NEW
+REPCAT$_SITE_OBJECTS
+REPCAT$_SNAPGROUP
+REPCAT$_TEMPLATE_OBJECTS
+REPCAT$_TEMPLATE_PARMS
+REPCAT$_TEMPLATE_REFGROUPS
+REPCAT$_TEMPLATE_SITES
+REPCAT$_TEMPLATE_STATUS
+
+TNAME
+------------------------------
+REPCAT$_TEMPLATE_TARGETS
+REPCAT$_TEMPLATE_TYPES
+REPCAT$_USER_AUTHORIZATIONS
+REPCAT$_USER_PARM_VALUES
+SQLPLUS_PRODUCT_PROFILE
+SYSCATALOG
+SYSFILES
+TAB
+TABQUOTAS
+
+174 rows selected.
+
+SQL> describe emp;
+ERROR:
+ORA-04043: object emp does not exist
+
+
+SQL> exit
+Disconnected from Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+C:\Users\kkwtp-pc>sqlplus scott/tiger
+
+SQL*Plus: Release 11.2.0.2.0 Production on Tue Jul 2 10:36:02 2019
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> select tname from tab;
+
+TNAME
+------------------------------
+BONUS
+DEPT
+EMP
+SALGRADE
+
+SQL> select * from emp;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800
+        20
+
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300
+        30
+
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975
+        20
+
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400
+        30
+
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450
+        10
+
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000
+        20
+
+      7839 KING       PRESIDENT            17-NOV-81       5000
+        10
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0
+        30
+
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100
+        20
+
+      7900 JAMES      CLERK           7698 03-DEC-81        950
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7902 FORD       ANALYST         7566 03-DEC-81       3000
+        20
+
+      7934 MILLER     CLERK           7782 23-JAN-82       1300
+        10
+
+
+14 rows selected.
+
+SQL> select ENAME from emp where DEPTNO= 20;
+
+ENAME
+----------
+SMITH
+JONES
+SCOTT
+ADAMS
+FORD
+
+SQL> SELECT ENAME, SAL from emp where SAL> 1000
+  2  SELECT ENAME, SAL from emp where SAL> 1000;
+SELECT ENAME, SAL from emp where SAL> 1000
+*
+ERROR at line 2:
+ORA-00933: SQL command not properly ended
+
+
+SQL> SELECT ENAME, SAL from emp where SAL> 1000;
+
+ENAME             SAL
+---------- ----------
+ALLEN            1600
+WARD             1250
+JONES            2975
+MARTIN           1250
+BLAKE            2850
+CLARK            2450
+SCOTT            3000
+KING             5000
+TURNER           1500
+ADAMS            1100
+FORD             3000
+
+ENAME             SAL
+---------- ----------
+MILLER           1300
+
+12 rows selected.
+
+SQL> SELECT EMPNON ENAME from emp where JOB= 'manager';
+SELECT EMPNON ENAME from emp where JOB= 'manager'
+       *
+ERROR at line 1:
+ORA-00904: "EMPNON": invalid identifier
+
+
+SQL> SELECT EMPNO, ENAME from emp where JOB= 'manager';
+
+no rows selected
+
+SQL>Microsoft Windows [Version 10.0.17134.829]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\kkwtp-pc>sqlplus
+
+SQL*Plus: Release 11.2.0.2.0 Production on Tue Jul 2 10:34:19 2019
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+Enter user-name: system
+Enter password:
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> @C:\oraclexe\app\oracle\product\11.2.0\server\rdbms\admin\utlsampl
+Disconnected from Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+C:\Users\kkwtp-pc>
+C:\Users\kkwtp-pc>sqlplus system/0
+
+SQL*Plus: Release 11.2.0.2.0 Production on Tue Jul 2 10:34:40 2019
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> select tname from tab;
+
+TNAME
+------------------------------
+AQ$DEF$_AQCALL
+AQ$DEF$_AQERROR
+AQ$_DEF$_AQCALL_F
+AQ$_DEF$_AQERROR_F
+AQ$_INTERNET_AGENTS
+AQ$_INTERNET_AGENT_PRIVS
+AQ$_QUEUES
+AQ$_QUEUE_TABLES
+AQ$_SCHEDULES
+CATALOG
+COL
+
+TNAME
+------------------------------
+DEF$_AQCALL
+DEF$_AQERROR
+DEF$_CALLDEST
+DEF$_DEFAULTDEST
+DEF$_DESTINATION
+DEF$_ERROR
+DEF$_LOB
+DEF$_ORIGIN
+DEF$_PROPAGATOR
+DEF$_PUSHED_TRANSACTIONS
+HELP
+
+TNAME
+------------------------------
+LOGMNRC_DBNAME_UID_MAP
+LOGMNRC_GSBA
+LOGMNRC_GSII
+LOGMNRC_GTCS
+LOGMNRC_GTLO
+LOGMNRP_CTAS_PART_MAP
+LOGMNRT_MDDL$
+LOGMNR_AGE_SPILL$
+LOGMNR_ATTRCOL$
+LOGMNR_ATTRIBUTE$
+LOGMNR_CCOL$
+
+TNAME
+------------------------------
+LOGMNR_CDEF$
+LOGMNR_COL$
+LOGMNR_COLTYPE$
+LOGMNR_DICTIONARY$
+LOGMNR_DICTSTATE$
+LOGMNR_ENC$
+LOGMNR_ERROR$
+LOGMNR_FILTER$
+LOGMNR_GLOBAL$
+LOGMNR_GT_TAB_INCLUDE$
+LOGMNR_GT_USER_INCLUDE$
+
+TNAME
+------------------------------
+LOGMNR_GT_XID_INCLUDE$
+LOGMNR_ICOL$
+LOGMNR_IND$
+LOGMNR_INDCOMPART$
+LOGMNR_INDPART$
+LOGMNR_INDSUBPART$
+LOGMNR_INTEGRATED_SPILL$
+LOGMNR_KOPM$
+LOGMNR_LOB$
+LOGMNR_LOBFRAG$
+LOGMNR_LOG$
+
+TNAME
+------------------------------
+LOGMNR_LOGMNR_BUILDLOG
+LOGMNR_NTAB$
+LOGMNR_OBJ$
+LOGMNR_OPQTYPE$
+LOGMNR_PARAMETER$
+LOGMNR_PARTOBJ$
+LOGMNR_PROCESSED_LOG$
+LOGMNR_PROPS$
+LOGMNR_REFCON$
+LOGMNR_RESTART_CKPT$
+LOGMNR_RESTART_CKPT_TXINFO$
+
+TNAME
+------------------------------
+LOGMNR_SEED$
+LOGMNR_SESSION$
+LOGMNR_SESSION_ACTIONS$
+LOGMNR_SESSION_EVOLVE$
+LOGMNR_SPILL$
+LOGMNR_SUBCOLTYPE$
+LOGMNR_TAB$
+LOGMNR_TABCOMPART$
+LOGMNR_TABPART$
+LOGMNR_TABSUBPART$
+LOGMNR_TS$
+
+TNAME
+------------------------------
+LOGMNR_TYPE$
+LOGMNR_UID$
+LOGMNR_USER$
+LOGSTDBY$APPLY_MILESTONE
+LOGSTDBY$APPLY_PROGRESS
+LOGSTDBY$EDS_TABLES
+LOGSTDBY$EVENTS
+LOGSTDBY$FLASHBACK_SCN
+LOGSTDBY$HISTORY
+LOGSTDBY$PARAMETERS
+LOGSTDBY$PLSQL
+
+TNAME
+------------------------------
+LOGSTDBY$SCN
+LOGSTDBY$SKIP
+LOGSTDBY$SKIP_SUPPORT
+LOGSTDBY$SKIP_TRANSACTION
+MVIEW$_ADV_AJG
+MVIEW$_ADV_BASETABLE
+MVIEW$_ADV_CLIQUE
+MVIEW$_ADV_ELIGIBLE
+MVIEW$_ADV_EXCEPTIONS
+MVIEW$_ADV_FILTER
+MVIEW$_ADV_FILTERINSTANCE
+
+TNAME
+------------------------------
+MVIEW$_ADV_FJG
+MVIEW$_ADV_GC
+MVIEW$_ADV_INFO
+MVIEW$_ADV_JOURNAL
+MVIEW$_ADV_LEVEL
+MVIEW$_ADV_LOG
+MVIEW$_ADV_OUTPUT
+MVIEW$_ADV_PARAMETERS
+MVIEW$_ADV_PLAN
+MVIEW$_ADV_PRETTY
+MVIEW$_ADV_ROLLUP
+
+TNAME
+------------------------------
+MVIEW$_ADV_SQLDEPEND
+MVIEW$_ADV_TEMP
+MVIEW$_ADV_WORKLOAD
+MVIEW_EVALUATIONS
+MVIEW_EXCEPTIONS
+MVIEW_FILTER
+MVIEW_FILTERINSTANCE
+MVIEW_LOG
+MVIEW_RECOMMENDATIONS
+MVIEW_WORKLOAD
+OL$
+
+TNAME
+------------------------------
+OL$HINTS
+OL$NODES
+PRODUCT_PRIVS
+PRODUCT_USER_PROFILE
+PUBLICSYN
+REPCAT$_AUDIT_ATTRIBUTE
+REPCAT$_AUDIT_COLUMN
+REPCAT$_COLUMN_GROUP
+REPCAT$_CONFLICT
+REPCAT$_DDL
+REPCAT$_EXCEPTIONS
+
+TNAME
+------------------------------
+REPCAT$_EXTENSION
+REPCAT$_FLAVORS
+REPCAT$_FLAVOR_OBJECTS
+REPCAT$_GENERATED
+REPCAT$_GROUPED_COLUMN
+REPCAT$_INSTANTIATION_DDL
+REPCAT$_KEY_COLUMNS
+REPCAT$_OBJECT_PARMS
+REPCAT$_OBJECT_TYPES
+REPCAT$_PARAMETER_COLUMN
+REPCAT$_PRIORITY
+
+TNAME
+------------------------------
+REPCAT$_PRIORITY_GROUP
+REPCAT$_REFRESH_TEMPLATES
+REPCAT$_REPCAT
+REPCAT$_REPCATLOG
+REPCAT$_REPCOLUMN
+REPCAT$_REPGROUP_PRIVS
+REPCAT$_REPOBJECT
+REPCAT$_REPPROP
+REPCAT$_REPSCHEMA
+REPCAT$_RESOLUTION
+REPCAT$_RESOLUTION_METHOD
+
+TNAME
+------------------------------
+REPCAT$_RESOLUTION_STATISTICS
+REPCAT$_RESOL_STATS_CONTROL
+REPCAT$_RUNTIME_PARMS
+REPCAT$_SITES_NEW
+REPCAT$_SITE_OBJECTS
+REPCAT$_SNAPGROUP
+REPCAT$_TEMPLATE_OBJECTS
+REPCAT$_TEMPLATE_PARMS
+REPCAT$_TEMPLATE_REFGROUPS
+REPCAT$_TEMPLATE_SITES
+REPCAT$_TEMPLATE_STATUS
+
+TNAME
+------------------------------
+REPCAT$_TEMPLATE_TARGETS
+REPCAT$_TEMPLATE_TYPES
+REPCAT$_USER_AUTHORIZATIONS
+REPCAT$_USER_PARM_VALUES
+SQLPLUS_PRODUCT_PROFILE
+SYSCATALOG
+SYSFILES
+TAB
+TABQUOTAS
+
+174 rows selected.
+
+SQL> describe emp;
+ERROR:
+ORA-04043: object emp does not exist
+
+
+SQL> exit
+Disconnected from Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+C:\Users\kkwtp-pc>sqlplus scott/tiger
+
+SQL*Plus: Release 11.2.0.2.0 Production on Tue Jul 2 10:36:02 2019
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> select tname from tab;
+
+TNAME
+------------------------------
+BONUS
+DEPT
+EMP
+SALGRADE
+
+SQL> select * from emp;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800
+        20
+
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300
+        30
+
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975
+        20
+
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400
+        30
+
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450
+        10
+
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000
+        20
+
+      7839 KING       PRESIDENT            17-NOV-81       5000
+        10
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0
+        30
+
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100
+        20
+
+      7900 JAMES      CLERK           7698 03-DEC-81        950
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7902 FORD       ANALYST         7566 03-DEC-81       3000
+        20
+
+      7934 MILLER     CLERK           7782 23-JAN-82       1300
+        10
+
+
+14 rows selected.
+
+SQL> select ENAME from emp where DEPTNO= 20;
+
+ENAME
+----------
+SMITH
+JONES
+SCOTT
+ADAMS
+FORD
+
+SQL> SELECT ENAME, SAL from emp where SAL> 1000
+  2  SELECT ENAME, SAL from emp where SAL> 1000;
+SELECT ENAME, SAL from emp where SAL> 1000
+*
+ERROR at line 2:
+ORA-00933: SQL command not properly ended
+
+
+SQL> SELECT ENAME, SAL from emp where SAL> 1000;
+
+ENAME             SAL
+---------- ----------
+ALLEN            1600
+WARD             1250
+JONES            2975
+MARTIN           1250
+BLAKE            2850
+CLARK            2450
+SCOTT            3000
+KING             5000
+TURNER           1500
+ADAMS            1100
+FORD             3000
+
+ENAME             SAL
+---------- ----------
+MILLER           1300
+
+12 rows selected.
+
+SQL> SELECT EMPNON ENAME from emp where JOB= 'manager';
+SELECT EMPNON ENAME from emp where JOB= 'manager'
+       *
+ERROR at line 1:
+ORA-00904: "EMPNON": invalid identifier
+
+
+SQL> SELECT EMPNO, ENAME from emp where JOB= 'manager';
+
+no rows selected
+
+SQL>
+SQL> SELECT ENAME, SAL from emp where SAL> 1000;
+
+ENAME             SAL
+---------- ----------
+ALLEN            1600
+WARD             1250
+JONES            2975
+MARTIN           1250
+BLAKE            2850
+CLARK            2450
+SCOTT            3000
+KING             5000
+TURNER           1500
+ADAMS            1100
+FORD             3000
+
+ENAME             SAL
+---------- ----------
+MILLER           1300
+
+12 rows selected.
+
+SQL> SELECT EMPNON ENAME from emp where JOB= 'manager';
+SELECT EMPNON ENAME from emp where JOB= 'manager'
+       *
+ERROR at line 1:
+ORA-00904: "EMPNON": invalid identifier
+
+
+SQL> SELECT EMPNO, ENAME from emp where JOB= 'manager';
+
+no rows selected
+
+SQL> SELECT ENAME, SAL from emp where SAL>= 1000 AND SAL<= 2000;
+
+ENAME             SAL
+---------- ----------
+ALLEN            1600
+WARD             1250
+MARTIN           1250
+TURNER           1500
+ADAMS            1100
+MILLER           1300
+
+6 rows selected.
+
+SQL> SELECT ENAME from emp where JOB='analyst' OR JOB= 'salesman';
+
+no rows selected
+
+SQL> SELECT ENAME from emp where (JOB='analyst' OR JOB= 'salesman');
+
+no rows selected
+
+SQL> SELECT ENAME from emp where JOB='analyst';
+
+no rows selected
+
+SQL> SELECT ENAME from emp WHERE JOB='ANALYST' OR JOB='SALESMAN'
+  2  SELECT ENAME from emp WHERE JOB='ANALYST' OR JOB='SALESMAN';
+SELECT ENAME from emp WHERE JOB='ANALYST' OR JOB='SALESMAN'
+*
+ERROR at line 2:
+ORA-00933: SQL command not properly ended
+
+
+SQL> SELECT ENAME from emp WHERE JOB='ANALYST' OR JOB='SALESMAN';
+
+ENAME
+----------
+ALLEN
+WARD
+MARTIN
+SCOTT
+TURNER
+FORD
+
+6 rows selected.
+
+SQL> SELECT ENAME from emp WHERE JOB<> 'MANAGER';
+
+ENAME
+----------
+SMITH
+ALLEN
+WARD
+MARTIN
+SCOTT
+KING
+TURNER
+ADAMS
+JAMES
+FORD
+MILLER
+
+11 rows selected.
+
+SQL> select ENAME from emp where EMPNO= {7369, 7521, 7839, 7934, 7788};
+select ENAME from emp where EMPNO= {7369, 7521, 7839, 7934, 7788}
+                                   *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+SQL> select ENAME from emp where EMPNO IS 7369 OR 7521 OR 7839 OR 7934 OR 7788;
+select ENAME from emp where EMPNO IS 7369 OR 7521 OR 7839 OR 7934 OR 7788
+                                     *
+ERROR at line 1:
+ORA-00908: missing NULL keyword
+
+
+SQL> select ENAME from emp where EMPNO IS 7369;
+select ENAME from emp where EMPNO IS 7369
+                                     *
+ERROR at line 1:
+ORA-00908: missing NULL keyword
+
+
+SQL> select ENAME from emp where EMPNO= 7369;
+
+ENAME
+----------
+SMITH
+
+SQL> select ENAME from emp where EMPNO= (7369, 7521, 7839, 7934, 7788);
+select ENAME from emp where EMPNO= (7369, 7521, 7839, 7934, 7788)
+                                 *
+ERROR at line 1:
+ORA-01797: this operator must be followed by ANY or ALL
+
+
+SQL> select ENAME from emp where EMPNO IN (7369, 7521, 7839, 7934, 7788);
+
+ENAME
+----------
+SMITH
+WARD
+SCOTT
+KING
+MILLER
+
+SQL> SELECT * from emp where deptno not in (30, 10)
+  2  SELECT * from emp where deptno not in (30, 10);
+SELECT * from emp where deptno not in (30, 10)
+*
+ERROR at line 2:
+ORA-00933: SQL command not properly ended
+
+
+SQL> SELECT * from emp where deptno not in (30, 10);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800
+        20
+
+      7566 JONES      MANAGER         7839 02-APR-81       2975
+        20
+
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000
+        20
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100
+        20
+
+      7902 FORD       ANALYST         7566 03-DEC-81       3000
+        20
+
+
+SQL> SELECT ENAME, SAL from emp where SAL BETWEEN (1000, 2000);
+SELECT ENAME, SAL from emp where SAL BETWEEN (1000, 2000)
+                                                  *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> SELECT ENAME, SAL from emp where SAL BETWEEN (1000 AND 2000);
+SELECT ENAME, SAL from emp where SAL BETWEEN (1000 AND 2000)
+                                                   *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> SELECT ENAME, SAL from emp where SAL BETWEEN 1000 AND 2000;
+
+ENAME             SAL
+---------- ----------
+ALLEN            1600
+WARD             1250
+MARTIN           1250
+TURNER           1500
+ADAMS            1100
+MILLER           1300
+
+6 rows selected.
+
+SQL> SELECT ENAME from emp where HIREDATE NOT BETWEEN 30-JUN-81 AND 31-DEC-81;
+SELECT ENAME from emp where HIREDATE NOT BETWEEN 30-JUN-81 AND 31-DEC-81
+                                                                  *
+ERROR at line 1:
+ORA-00904: "DEC": invalid identifier
+
+
+SQL> SELECT ENAME from emp where HIREDATE NOT BETWEEN (30-JUN-81) AND (31-DEC-81);
+SELECT ENAME from emp where HIREDATE NOT BETWEEN (30-JUN-81) AND (31-DEC-81)
+                                                                     *
+ERROR at line 1:
+ORA-00904: "DEC": invalid identifier
+
+
+SQL> SELECT ENAME from emp where HIREDATE NOT BETWEEN 30-06-81 AND 31-12-81;
+SELECT ENAME from emp where HIREDATE NOT BETWEEN 30-06-81 AND 31-12-81
+                                         *
+ERROR at line 1:
+ORA-00932: inconsistent datatypes: expected DATE got NUMBER
+
+
+SQL> SELECT ENAME from emp where HIREDATE NOT BETWEEN '30-06-81' AND '31-12-81';
+SELECT ENAME from emp where HIREDATE NOT BETWEEN '30-06-81' AND '31-12-81'
+                                                 *
+ERROR at line 1:
+ORA-01843: not a valid month
+
+
+SQL> SELECT ENAME from emp where HIREDATE NOT BETWEEN '30-JUN-81' AND '31-DEC-81';
+
+ENAME
+----------
+SMITH
+ALLEN
+WARD
+JONES
+BLAKE
+CLARK
+SCOTT
+ADAMS
+MILLER
+
+9 rows selected.
+
+SQL> SELECT ENAME, JOB from emp where MGR IS null;
+
+ENAME      JOB
+---------- ---------
+KING       PRESIDENT      
+
+SQL> SELECT ENAME from emp where COMM IS NULL;
+
+ENAME
+----------
+SMITH
+JONES
+BLAKE
+CLARK
+SCOTT
+KING
+ADAMS
+
+
+SQL> SELECT * from emp WHERE ENAME LIKE '_____';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800
+        20
+
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300
+        30
+
+      7566 JONES      MANAGER         7839 02-APR-81       2975
+        20
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+        30
+
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450
+        10
+
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000
+        20
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100
+        20
+
+      7900 JAMES      CLERK           7698 03-DEC-81        950
+        30
+
+
+8 rows selected.
+
+SQL> SELECT * from emp WHERE ENAME LIKE '__R%';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500
+        30
+
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400
+        30
+
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7902 FORD       ANALYST         7566 03-DEC-81       3000
+        20
+
+
+SQL> SELECT *from emp WHERE ENAME LIKE 'S%';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800
+        20
+
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000
+        20
+
+SQL> SELECT * from emp ORDER BY SAL asc;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800
+        20
+
+      7900 JAMES      CLERK           7698 03-DEC-81        950
+        30
+
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100
+        20
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500
+        30
+
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400
+        30
+
+      7934 MILLER     CLERK           7782 23-JAN-82       1300
+        10
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0
+        30
+
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300
+        30
+
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450
+        10
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+        30
+
+      7566 JONES      MANAGER         7839 02-APR-81       2975
+        20
+
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000
+        20
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7902 FORD       ANALYST         7566 03-DEC-81       3000
+        20
+
+      7839 KING       PRESIDENT            17-NOV-81       5000
+        10
+
+
+14 rows selected.
+
+SQL> SELECT * from emp ORDER BY deptno asc, SAL desc;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7839 KING       PRESIDENT            17-NOV-81       5000
+        10
+
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450
+        10
+
+      7934 MILLER     CLERK           7782 23-JAN-82       1300
+        10
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000
+        20
+
+      7902 FORD       ANALYST         7566 03-DEC-81       3000
+        20
+
+      7566 JONES      MANAGER         7839 02-APR-81       2975
+        20
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100
+        20
+
+      7369 SMITH      CLERK           7902 17-DEC-80        800
+        20
+
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300
+        30
+
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0
+        30
+
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500
+        30
+
+      7900 JAMES      CLERK           7698 03-DEC-81        950
+        30
+
+
+14 rows selected.
+
+SQL> SELECT * from emp ORDER BY 4 asc,3 desc;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7902 FORD       ANALYST         7566 03-DEC-81       3000
+        20
+
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000
+        20
+
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0
+        30
+
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400
+        30
+
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7900 JAMES      CLERK           7698 03-DEC-81        950
+        30
+
+      7934 MILLER     CLERK           7782 23-JAN-82       1300
+        10
+
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100
+        20
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+        30
+
+      7566 JONES      MANAGER         7839 02-APR-81       2975
+        20
+
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450
+        10
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800
+        20
+
+      7839 KING       PRESIDENT            17-NOV-81       5000
+        10
+
+
+14 rows selected.
+JAMES
+FORD
+MILLER
+
+10 rows selected.
+
+
+SQL> select count(EMPNO) from emp;
+
+COUNT(EMPNO)
+------------
+          14
+
+SQL> SELECT SUM(SAL) from emp;
+
+  SUM(SAL)
+----------
+     29025
+
+SQL> SELECT MAX(SAL)from emp WHERE JPB= 'SALESMAN';
+SELECT MAX(SAL)from emp WHERE JPB= 'SALESMAN'
+                              *
+ERROR at line 1:
+ORA-00904: "JPB": invalid identifier
+
+
+SQL> SELECT MAX(SAL)from emp WHERE JOB= 'SALESMAN';
+
+  MAX(SAL)
+----------
+      1600
+
+
+SQL> select DEPTNO, count(sal) from emp group by(deptno) ;
+
+    DEPTNO COUNT(SAL)
+---------- ----------
+        30          6
+        20          5
+        10          3
+
+SQL> select DEPTNO, sum(sal) from emp group by(deptno) ;
+
+    DEPTNO   SUM(SAL)
+---------- ----------
+        30       9400
+        20      10875
+        10       8750
+
+SQL> select JOB, count(empno) from emp group by(JOB) order by count(empno) desc;
+
+JOB       COUNT(EMPNO)
+--------- ------------
+CLERK                4
+SALESMAN             4
+MANAGER              3
+ANALYST              2
+PRESIDENT            1
+
+
+SQL> select JOB, count(empno)AS cnt from emp group by(JOB) order by cnt desc;
+
+JOB              CNT
+--------- ----------
+CLERK              4
+SALESMAN           4
+MANAGER            3
+ANALYST            2
+PRESIDENT          1
+
+SQL> SELECT job, sum(sal), max(sal) from emp where deptno= 20 group by job having sum(sal)> 5000;
+
+JOB         SUM(SAL)   MAX(SAL)
+--------- ---------- ----------
+ANALYST         6000       3000
+
+
+SQL> select * from emp where to_char(hiredate, 'yyyy')= '1981';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300
+        30
+
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500
+        30
+
+      7566 JONES      MANAGER         7839 02-APR-81       2975
+        20
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400
+        30
+
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+        30
+
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450
+        10
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7839 KING       PRESIDENT            17-NOV-81       5000
+        10
+
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0
+        30
+
+      7900 JAMES      CLERK           7698 03-DEC-81        950
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7902 FORD       ANALYST         7566 03-DEC-81       3000
+        20
+
+
+10 rows selected.
+
+
+SQL> select * from emp
+  2  where months_between (sysdate, hiredate)/ 12> 25;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800
+        20
+
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300
+        30
+
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975
+        20
+
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400
+        30
+
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450
+        10
+
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000
+        20
+
+      7839 KING       PRESIDENT            17-NOV-81       5000
+        10
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0
+        30
+
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100
+        20
+
+      7900 JAMES      CLERK           7698 03-DEC-81        950
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7902 FORD       ANALYST         7566 03-DEC-81       3000
+        20
+
+      7934 MILLER     CLERK           7782 23-JAN-82       1300
+        10
+
+
+14 rows selected.
+
+SQL> SELECT ENAME, JOB, DECODE(JOB, 'CLERK', 'ADMINSTAFF', 'MANAGER', 'EXECUTIVE', 'ANALYST', 'RNDSTAFF', JOB) AS JOB_DESCRIPTION FROM EMP;
+
+ENAME      JOB       JOB_DESCRI
+---------- --------- ----------
+SMITH      CLERK     ADMINSTAFF
+ALLEN      SALESMAN  SALESMAN
+WARD       SALESMAN  SALESMAN
+JONES      MANAGER   EXECUTIVE
+MARTIN     SALESMAN  SALESMAN
+BLAKE      MANAGER   EXECUTIVE
+CLARK      MANAGER   EXECUTIVE
+SCOTT      ANALYST   RNDSTAFF
+KING       PRESIDENT PRESIDENT
+TURNER     SALESMAN  SALESMAN
+ADAMS      CLERK     ADMINSTAFF
+
+ENAME      JOB       JOB_DESCRI
+---------- --------- ----------
+JAMES      CLERK     ADMINSTAFF
+FORD       ANALYST   RNDSTAFF
+MILLER     CLERK     ADMINSTAFF
+
+14 rows selected.
+
+SQL> SELECT ENAME, JOB, CASE JOB WHEN 'CLERK' THEN 'ADMINSTAFF' WHEN 'MANAGER' THEN 'EXECUTIVE' WHEN 'ANALYST' THEN 'RNDSTAFF' ELSE JOB END FROM EMP;
+
+ENAME      JOB       CASEJOBWHE
+---------- --------- ----------
+SMITH      CLERK     ADMINSTAFF
+ALLEN      SALESMAN  SALESMAN
+WARD       SALESMAN  SALESMAN
+JONES      MANAGER   EXECUTIVE
+MARTIN     SALESMAN  SALESMAN
+BLAKE      MANAGER   EXECUTIVE
+CLARK      MANAGER   EXECUTIVE
+SCOTT      ANALYST   RNDSTAFF
+KING       PRESIDENT PRESIDENT
+TURNER     SALESMAN  SALESMAN
+ADAMS      CLERK     ADMINSTAFF
+
+ENAME      JOB       CASEJOBWHE
+---------- --------- ----------
+JAMES      CLERK     ADMINSTAFF
+FORD       ANALYST   RNDSTAFF
+MILLER     CLERK     ADMINSTAFF
+
+14 rows selected.
+
+SQL> SELECT ENAME, SAL,
+  2  CASE
+  3  WHEN SAL< 1000 THEN 'VL'
+  4  WHEN SAL BETWEEN 1000 AND 2000 THEN 'L'
+  5  WHEN SAL< 3000 THEN 'M'
+  6  WHEN SAL< 4000 THEN 'H'
+  7  ELSE 'VH'
+  8  END
+  9  FROM EMP;
+
+ENAME             SAL CA
+---------- ---------- --
+SMITH             800 VL
+ALLEN            1600 L
+WARD             1250 L
+JONES            2975 M
+MARTIN           1250 L
+BLAKE            2850 M
+CLARK            2450 M
+SCOTT            3000 H
+KING             5000 VH
+TURNER           1500 L
+ADAMS            1100 L
+
+ENAME             SAL CA
+---------- ---------- --
+JAMES             950 VL
+FORD             3000 H
+MILLER           1300 L
+
+14 rows selected.
+
+CARTESIAN PRODUCT:
+
+SQL> SELECT EMPNO, ENAME, SAL, EMP.DEPTNO, DEPT. DEPTNO, DNAME, LOC FROM EMP, DEPT;
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7369 SMITH             800         20         10 ACCOUNTING
+NEW YORK
+
+      7499 ALLEN            1600         30         10 ACCOUNTING
+NEW YORK
+
+      7521 WARD             1250         30         10 ACCOUNTING
+NEW YORK
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7566 JONES            2975         20         10 ACCOUNTING
+NEW YORK
+
+      7654 MARTIN           1250         30         10 ACCOUNTING
+NEW YORK
+
+      7698 BLAKE            2850         30         10 ACCOUNTING
+NEW YORK
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7782 CLARK            2450         10         10 ACCOUNTING
+NEW YORK
+
+      7788 SCOTT            3000         20         10 ACCOUNTING
+NEW YORK
+
+      7839 KING             5000         10         10 ACCOUNTING
+NEW YORK
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7844 TURNER           1500         30         10 ACCOUNTING
+NEW YORK
+
+      7876 ADAMS            1100         20         10 ACCOUNTING
+NEW YORK
+
+      7900 JAMES             950         30         10 ACCOUNTING
+NEW YORK
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7902 FORD             3000         20         10 ACCOUNTING
+NEW YORK
+
+      7934 MILLER           1300         10         10 ACCOUNTING
+NEW YORK
+
+      7369 SMITH             800         20         20 RESEARCH
+DALLAS
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7499 ALLEN            1600         30         20 RESEARCH
+DALLAS
+
+      7521 WARD             1250         30         20 RESEARCH
+DALLAS
+
+      7566 JONES            2975         20         20 RESEARCH
+DALLAS
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7654 MARTIN           1250         30         20 RESEARCH
+DALLAS
+
+      7698 BLAKE            2850         30         20 RESEARCH
+DALLAS
+
+      7782 CLARK            2450         10         20 RESEARCH
+DALLAS
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7788 SCOTT            3000         20         20 RESEARCH
+DALLAS
+
+      7839 KING             5000         10         20 RESEARCH
+DALLAS
+
+      7844 TURNER           1500         30         20 RESEARCH
+DALLAS
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7876 ADAMS            1100         20         20 RESEARCH
+DALLAS
+
+      7900 JAMES             950         30         20 RESEARCH
+DALLAS
+
+      7902 FORD             3000         20         20 RESEARCH
+DALLAS
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7934 MILLER           1300         10         20 RESEARCH
+DALLAS
+
+      7369 SMITH             800         20         30 SALES
+CHICAGO
+
+      7499 ALLEN            1600         30         30 SALES
+CHICAGO
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7521 WARD             1250         30         30 SALES
+CHICAGO
+
+      7566 JONES            2975         20         30 SALES
+CHICAGO
+
+      7654 MARTIN           1250         30         30 SALES
+CHICAGO
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7698 BLAKE            2850         30         30 SALES
+CHICAGO
+
+      7782 CLARK            2450         10         30 SALES
+CHICAGO
+
+      7788 SCOTT            3000         20         30 SALES
+CHICAGO
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7839 KING             5000         10         30 SALES
+CHICAGO
+
+      7844 TURNER           1500         30         30 SALES
+CHICAGO
+
+      7876 ADAMS            1100         20         30 SALES
+CHICAGO
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7900 JAMES             950         30         30 SALES
+CHICAGO
+
+      7902 FORD             3000         20         30 SALES
+CHICAGO
+
+      7934 MILLER           1300         10         30 SALES
+CHICAGO
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7369 SMITH             800         20         40 OPERATIONS
+BOSTON
+
+      7499 ALLEN            1600         30         40 OPERATIONS
+BOSTON
+
+      7521 WARD             1250         30         40 OPERATIONS
+BOSTON
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7566 JONES            2975         20         40 OPERATIONS
+BOSTON
+
+      7654 MARTIN           1250         30         40 OPERATIONS
+BOSTON
+
+      7698 BLAKE            2850         30         40 OPERATIONS
+BOSTON
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7782 CLARK            2450         10         40 OPERATIONS
+BOSTON
+
+      7788 SCOTT            3000         20         40 OPERATIONS
+BOSTON
+
+      7839 KING             5000         10         40 OPERATIONS
+BOSTON
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7844 TURNER           1500         30         40 OPERATIONS
+BOSTON
+
+      7876 ADAMS            1100         20         40 OPERATIONS
+BOSTON
+
+      7900 JAMES             950         30         40 OPERATIONS
+BOSTON
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7902 FORD             3000         20         40 OPERATIONS
+BOSTON
+
+      7934 MILLER           1300         10         40 OPERATIONS
+BOSTON
+
+
+56 rows selected.
+
+INNER JOIN
+
+SQL> SELECT EMPNO, ENAME, SAL, EMP.DEPTNO, DEPT. DEPTNO, DNAME, LOC FROM EMP INNER JOIN DEPT ON EMP.DEPTNO= DEPT.DEPTNO;
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7369 SMITH             800         20         20 RESEARCH
+DALLAS
+
+      7499 ALLEN            1600         30         30 SALES
+CHICAGO
+
+      7521 WARD             1250         30         30 SALES
+CHICAGO
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7566 JONES            2975         20         20 RESEARCH
+DALLAS
+
+      7654 MARTIN           1250         30         30 SALES
+CHICAGO
+
+      7698 BLAKE            2850         30         30 SALES
+CHICAGO
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7782 CLARK            2450         10         10 ACCOUNTING
+NEW YORK
+
+      7788 SCOTT            3000         20         20 RESEARCH
+DALLAS
+
+      7839 KING             5000         10         10 ACCOUNTING
+NEW YORK
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7844 TURNER           1500         30         30 SALES
+CHICAGO
+
+      7876 ADAMS            1100         20         20 RESEARCH
+DALLAS
+
+      7900 JAMES             950         30         30 SALES
+CHICAGO
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7902 FORD             3000         20         20 RESEARCH
+DALLAS
+
+      7934 MILLER           1300         10         10 ACCOUNTING
+NEW YORK
+
+
+14 rows selected.
+
+EQUI JOIN:
+
+
+SQL> SELECT EMPNO, ENAME, SAL, EMP.DEPTNO, DEPT. DEPTNO, DNAME, LOC FROM EMP, DEPT WHERE EMP.DEPTNO= DEPT.DEPTNO;
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7369 SMITH             800         20         20 RESEARCH
+DALLAS
+
+      7499 ALLEN            1600         30         30 SALES
+CHICAGO
+
+      7521 WARD             1250         30         30 SALES
+CHICAGO
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7566 JONES            2975         20         20 RESEARCH
+DALLAS
+
+      7654 MARTIN           1250         30         30 SALES
+CHICAGO
+
+      7698 BLAKE            2850         30         30 SALES
+CHICAGO
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7782 CLARK            2450         10         10 ACCOUNTING
+NEW YORK
+
+      7788 SCOTT            3000         20         20 RESEARCH
+DALLAS
+
+      7839 KING             5000         10         10 ACCOUNTING
+NEW YORK
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7844 TURNER           1500         30         30 SALES
+CHICAGO
+
+      7876 ADAMS            1100         20         20 RESEARCH
+DALLAS
+
+      7900 JAMES             950         30         30 SALES
+CHICAGO
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7902 FORD             3000         20         20 RESEARCH
+DALLAS
+
+      7934 MILLER           1300         10         10 ACCOUNTING
+NEW YORK
+
+
+14 rows selected.
+
+ROJ:
+
+SQL> SELECT EMPNO, ENAME, SAL, EMP.DEPTNO, DEPT. DEPTNO, DNAME, LOC FROM EMP, DEPT WHERE EMP.DEPTNO(+)= DEPT.DEPTNO;
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7369 SMITH             800         20         20 RESEARCH
+DALLAS
+
+      7499 ALLEN            1600         30         30 SALES
+CHICAGO
+
+      7521 WARD             1250         30         30 SALES
+CHICAGO
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7566 JONES            2975         20         20 RESEARCH
+DALLAS
+
+      7654 MARTIN           1250         30         30 SALES
+CHICAGO
+
+      7698 BLAKE            2850         30         30 SALES
+CHICAGO
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7782 CLARK            2450         10         10 ACCOUNTING
+NEW YORK
+
+      7788 SCOTT            3000         20         20 RESEARCH
+DALLAS
+
+      7839 KING             5000         10         10 ACCOUNTING
+NEW YORK
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7844 TURNER           1500         30         30 SALES
+CHICAGO
+
+      7876 ADAMS            1100         20         20 RESEARCH
+DALLAS
+
+      7900 JAMES             950         30         30 SALES
+CHICAGO
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7902 FORD             3000         20         20 RESEARCH
+DALLAS
+
+      7934 MILLER           1300         10         10 ACCOUNTING
+NEW YORK
+
+                                                    40 OPERATIONS
+BOSTON
+
+
+15 rows selected.
+
+LOJ:
+
+SQL> SELECT EMPNO, ENAME, SAL, EMP.DEPTNO, DEPT. DEPTNO, DNAME, LOC FROM EMP, DEPT WHERE EMP.DEPTNO= DEPT.DEPTNO(+);
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7934 MILLER           1300         10         10 ACCOUNTING
+NEW YORK
+
+      7839 KING             5000         10         10 ACCOUNTING
+NEW YORK
+
+      7782 CLARK            2450         10         10 ACCOUNTING
+NEW YORK
+
+SELF JOIN
+
+
+SQL> SELECT e.empno, e.ename, e.sal, e.mgr, m.empno, m.ename
+  2  FROM emp e, emp m
+  3  WHERE e.mgr= m.empno;
+
+     EMPNO ENAME             SAL        MGR      EMPNO ENAME
+---------- ---------- ---------- ---------- ---------- ----------
+      7902 FORD             3000       7566       7566 JONES
+      7788 SCOTT            3000       7566       7566 JONES
+      7900 JAMES             950       7698       7698 BLAKE
+      7844 TURNER           1500       7698       7698 BLAKE
+      7654 MARTIN           1250       7698       7698 BLAKE
+      7521 WARD             1250       7698       7698 BLAKE
+      7499 ALLEN            1600       7698       7698 BLAKE
+      7934 MILLER           1300       7782       7782 CLARK
+      7876 ADAMS            1100       7788       7788 SCOTT
+      7782 CLARK            2450       7839       7839 KING
+      7698 BLAKE            2850       7839       7839 KING
+
+     EMPNO ENAME             SAL        MGR      EMPNO ENAME
+---------- ---------- ---------- ---------- ---------- ----------
+      7566 JONES            2975       7839       7839 KING
+      7369 SMITH             800       7902       7902 FORD
+
+13 rows selected.
+
+SQL> SELECT e.empno, e.ename, e.sal, e.mgr, m.empno, m.ename
+  2  FROM emp e INNER JOIN emp m
+  3  ON e.mgr= m.empno;
+
+     EMPNO ENAME             SAL        MGR      EMPNO ENAME
+---------- ---------- ---------- ---------- ---------- ----------
+      7902 FORD             3000       7566       7566 JONES
+      7788 SCOTT            3000       7566       7566 JONES
+      7900 JAMES             950       7698       7698 BLAKE
+      7844 TURNER           1500       7698       7698 BLAKE
+      7654 MARTIN           1250       7698       7698 BLAKE
+      7521 WARD             1250       7698       7698 BLAKE
+      7499 ALLEN            1600       7698       7698 BLAKE
+      7934 MILLER           1300       7782       7782 CLARK
+      7876 ADAMS            1100       7788       7788 SCOTT
+      7782 CLARK            2450       7839       7839 KING
+      7698 BLAKE            2850       7839       7839 KING
+
+     EMPNO ENAME             SAL        MGR      EMPNO ENAME
+---------- ---------- ---------- ---------- ---------- ----------
+      7566 JONES            2975       7839       7839 KING
+      7369 SMITH             800       7902       7902 FORD
+
+13 rows selected.
+
+SQL> SELECT * FROM SALGRADE;
+
+     GRADE      LOSAL      HISAL
+---------- ---------- ----------
+         1        700       1200
+         2       1201       1400
+         3       1401       2000
+         4       2001       3000
+         5       3001       9999
+         1        700       1200
+         2       1201       1400
+         3       1401       2000
+         4       2001       3000
+         5       3001       9999
+
+10 rows selected.
+
+SQL> SELECT ENAME, SAL, GRADE FROM EMP, SALGRADE WHERE SAL>= LOSAL AND SAL<= HISAL
+  2  ;
+
+ENAME             SAL      GRADE
+---------- ---------- ----------
+SMITH             800          1
+JAMES             950          1
+ADAMS            1100          1
+SMITH             800          1
+JAMES             950          1
+ADAMS            1100          1
+WARD             1250          2
+MARTIN           1250          2
+MILLER           1300          2
+WARD             1250          2
+MARTIN           1250          2
+
+ENAME             SAL      GRADE
+---------- ---------- ----------
+MILLER           1300          2
+TURNER           1500          3
+ALLEN            1600          3
+TURNER           1500          3
+ALLEN            1600          3
+CLARK            2450          4
+BLAKE            2850          4
+JONES            2975          4
+SCOTT            3000          4
+FORD             3000          4
+CLARK            2450          4
+
+ENAME             SAL      GRADE
+---------- ---------- ----------
+BLAKE            2850          4
+JONES            2975          4
+SCOTT            3000          4
+FORD             3000          4
+KING             5000          5
+KING             5000          5
+
+28 rows selected.
+
+SAME RESULT IS GIVEN BY
+SQL> SELECT ENAME, SAL, GRADE FROM EMP INNER JOIN SALGRADE ON SAL>= LOSAL AND SAL<= HISAL;
+
+ENAME             SAL      GRADE
+---------- ---------- ----------
+SMITH             800          1
+JAMES             950          1
+ADAMS            1100          1
+SMITH             800          1
+JAMES             950          1
+ADAMS            1100          1
+WARD             1250          2
+MARTIN           1250          2
+MILLER           1300          2
+WARD             1250          2
+MARTIN           1250          2
+
+ENAME             SAL      GRADE
+---------- ---------- ----------
+MILLER           1300          2
+TURNER           1500          3
+ALLEN            1600          3
+TURNER           1500          3
+ALLEN            1600          3
+CLARK            2450          4
+BLAKE            2850          4
+JONES            2975          4
+SCOTT            3000          4
+FORD             3000          4
+CLARK            2450          4
+
+ENAME             SAL      GRADE
+---------- ---------- ----------
+BLAKE            2850          4
+JONES            2975          4
+SCOTT            3000          4
+FORD             3000          4
+KING             5000          5
+KING             5000          5
+
+28 rows selected.
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7902 FORD             3000         20         20 RESEARCH
+DALLAS
+
+      7876 ADAMS            1100         20         20 RESEARCH
+DALLAS
+
+      7788 SCOTT            3000         20         20 RESEARCH
+DALLAS
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7566 JONES            2975         20         20 RESEARCH
+DALLAS
+
+      7369 SMITH             800         20         20 RESEARCH
+DALLAS
+
+      7900 JAMES             950         30         30 SALES
+CHICAGO
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7844 TURNER           1500         30         30 SALES
+CHICAGO
+
+      7698 BLAKE            2850         30         30 SALES
+CHICAGO
+
+      7654 MARTIN           1250         30         30 SALES
+CHICAGO
+
+
+     EMPNO ENAME             SAL     DEPTNO     DEPTNO DNAME
+---------- ---------- ---------- ---------- ---------- --------------
+LOC
+-------------
+      7521 WARD             1250         30         30 SALES
+CHICAGO
+
+      7499 ALLEN            1600         30         30 SALES
+CHICAGO
+
+
+14 rows selected.
+
+SQL> explain plan for select* from emp where ename= 'miller';
+
+Explained.
+
+SQL> select * from table(dbms_xplan.display);
+
+PLAN_TABLE_OUTPUT
+--------------------------------------------------------------------------------
+Plan hash value: 3956160932
+
+--------------------------------------------------------------------------
+| Id  | Operation         | Name | Rows  | Bytes | Cost (%CPU)| Time     |
+--------------------------------------------------------------------------
+|   0 | SELECT STATEMENT  |      |     1 |    87 |     2   (0)| 00:00:01 |
+|*  1 |  TABLE ACCESS FULL| EMP  |     1 |    87 |     2   (0)| 00:00:01 |
+--------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+PLAN_TABLE_OUTPUT
+--------------------------------------------------------------------------------
+
+   1 - filter("ENAME"='miller')
+
+Note
+-----
+   - dynamic sampling used for this statement (level=2)
+
+17 rows selected.
+
+SQL> explain plan for select* from emp where ename= 'miller';
+
+Explained.
+
+SQL> select * from table(dbms_xplan.display);
+
+PLAN_TABLE_OUTPUT
+--------------------------------------------------------------------------------
+Plan hash value: 3956160932
+
+--------------------------------------------------------------------------
+| Id  | Operation         | Name | Rows  | Bytes | Cost (%CPU)| Time     |
+--------------------------------------------------------------------------
+|   0 | SELECT STATEMENT  |      |     1 |    87 |     2   (0)| 00:00:01 |
+|*  1 |  TABLE ACCESS FULL| EMP  |     1 |    87 |     2   (0)| 00:00:01 |
+--------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+PLAN_TABLE_OUTPUT
+--------------------------------------------------------------------------------
+
+   1 - filter("ENAME"='miller')
+
+Note
+-----
+   - dynamic sampling used for this statement (level=2)
+
+17 rows selected.
+
+SQL> explain plan for select* from emp where empno= 7900;
+
+Explained.
+
+SQL> select * from table(dbms_xplan.display);
+
+PLAN_TABLE_OUTPUT
+--------------------------------------------------------------------------------
+Plan hash value: 2949544139
+
+--------------------------------------------------------------------------------
+------
+
+| Id  | Operation                   | Name   | Rows  | Bytes | Cost (%CPU)| Time
+     |
+
+--------------------------------------------------------------------------------
+------
+
+
+PLAN_TABLE_OUTPUT
+--------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT            |        |     1 |    87 |     1   (0)| 00:0
+0:01 |
+
+|   1 |  TABLE ACCESS BY INDEX ROWID| EMP    |     1 |    87 |     1   (0)| 00:0
+0:01 |
+
+|*  2 |   INDEX UNIQUE SCAN         | PK_EMP |     1 |       |     1   (0)| 00:0
+0:01 |
+
+--------------------------------------------------------------------------------
+------
+
+PLAN_TABLE_OUTPUT
+--------------------------------------------------------------------------------
+
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   2 - access("EMPNO"=7900)
+
+14 rows selected.
+

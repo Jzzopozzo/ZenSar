@@ -1,0 +1,836 @@
+Microsoft Windows [Version 10.0.17134.829]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\kkwtp-pc>SQLPLUS SYSTEM/0
+
+SQL*Plus: Release 11.2.0.2.0 Production on Wed Jul 3 15:04:51 2019
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> @C:\oraclexe\app\oracle\product\11.2.0\server\rdbms\admin\utlsampl
+Disconnected from Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+C:\Users\kkwtp-pc>SQLPLUS SCOTT/TIGER
+
+SQL*Plus: Release 11.2.0.2.0 Production on Wed Jul 3 15:05:00 2019
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+ERROR:
+ORA-01017: invalid username/password; logon denied
+
+
+Enter user-name: SCOTT
+Enter password:
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> CREATE VIEW dept20 AS
+  2  SELECT * FROM emp
+  3  WHERE deptno= 20;
+CREATE VIEW dept20 AS
+            *
+ERROR at line 1:
+ORA-01031: insufficient privileges
+
+
+SQL> conn system
+Enter password:
+Connected.
+SQL> GRANT CREATE VIEW TO SCOTT;
+
+Grant succeeded.
+
+SQL> CREATE VIEW dept20 AS
+  2  SELECT * FROM emp
+  3  WHERE deptno= 20;
+SELECT * FROM emp
+              *
+ERROR at line 2:
+ORA-00942: table or view does not exist
+
+
+SQL> CONN SCOTT
+Enter password:
+Connected.
+SQL> SELECT * FROM emp
+  2  ;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800
+        20
+
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300
+        30
+
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975
+        20
+
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400
+        30
+
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450
+        10
+
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000
+        20
+
+      7839 KING       PRESIDENT            17-NOV-81       5000
+        10
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0
+        30
+
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100
+        20
+
+      7900 JAMES      CLERK           7698 03-DEC-81        950
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7902 FORD       ANALYST         7566 03-DEC-81       3000
+        20
+
+      7934 MILLER     CLERK           7782 23-JAN-82       1300
+        10
+
+
+14 rows selected.
+
+SQL> CREATE VIEW dept20 AS
+  2  SELECT * FROM emp
+  3  WHERE deptno= 20;
+
+View created.
+
+SQL> CREATE VIEW empview as
+SELECT empno, ename, sal, EMP.deptno, dname
+FROM  EMP INNER JOIN DEPT
+ON EMP.DEPTNO= DEPT.DEPTNO;
+
+
+SQL> CREATE VIEW empview as
+  2  SELECT empno, ename, sal, EMP.deptno, dname
+  3  FROM  EMP INNER JOIN DEPT
+  4  ON EMP.DEPTNO= DEPT.DEPTNO;
+
+View created.
+
+SQL> SELECT TEXT FROM user_views WHERE view_name= 'EMPVIEW';
+
+TEXT
+--------------------------------------------------------------------------------
+SELECT empno, ename, sal, EMP.deptno, dname
+FROM  EMP INNER JOIN DEPT
+ON EMP.DEP
+
+
+SQL> SET LONG 1000
+SQL> SELECT TEXT FROM user_views WHERE view_name= 'EMPVIEW';
+
+TEXT
+--------------------------------------------------------------------------------
+SELECT empno, ename, sal, EMP.deptno, dname
+FROM  EMP INNER JOIN DEPT
+ON EMP.DEPTNO= DEPT.DEPTNO
+
+
+CREATE OR REPLACE VIEW empview(eno, ename, sa, dno, dname) AS
+SELECT empno, ename, sal, emp.deptno, dname FROM emp INNER JOIN dept
+ON emp.deptno= dept.deptno;
+
+SQL> CREATE OR REPLACE VIEW empview(eno, ename, sa, dno, dname) AS
+  2  SELECT empno, ename, sal, emp.deptno, dname FROM emp INNER JOIN dept
+  3  ON emp.deptno= dept.deptno;
+
+View created.
+
+SQL> SELECT * FROM empview WHERE DNO= 20;
+
+       ENO ENAME              SA        DNO DNAME
+---------- ---------- ---------- ---------- --------------
+      7369 SMITH             800         20 RESEARCH
+      7566 JONES            2975         20 RESEARCH
+      7788 SCOTT            3000         20 RESEARCH
+      7876 ADAMS            1100         20 RESEARCH
+      7902 FORD             3000         20 RESEARCH
+
+
+SQL> CREATE OR REPLACE VIEW empview(eno, ename, sa, dno, dname) AS
+  2  SELECT empno, ename, sal, emp.deptno, dname FROM emp INNER JOIN dept
+  3  ON emp.deptno= dept.deptno;
+
+View created.
+
+SQL> SELECT * FROM empview WHERE DNO= 20;
+
+       ENO ENAME              SA        DNO DNAME
+---------- ---------- ---------- ---------- --------------
+      7369 SMITH             800         20 RESEARCH
+      7566 JONES            2975         20 RESEARCH
+      7788 SCOTT            3000         20 RESEARCH
+      7876 ADAMS            1100         20 RESEARCH
+      7902 FORD             3000         20 RESEARCH
+
+CREATE OR REPLACE VIEW DEPT20 AS
+SELECT EMPNO, ENAME, SAL, JOB, HIREDATE, DEPTNO
+FROM EMP WHERE DEPTNO= 20
+WITH CHECK OPTION;
+
+CREATE TABLE TEST1
+(A NUMBER(2) PRIMARY KEY,
+B VARCHAR(10) CONSTRAINT unq_test1_b UNIQUE,
+C NUMBER(2) CONSTRAINT chk_test1_c CHECK(C> 5),
+D NUMBER(3) REFERENCES DEPT(DEPTNO));
+
+Microsoft Windows [Version 10.0.17134.829]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\kkwtp-pc>SQLPLUS SYSTEM/0
+
+SQL*Plus: Release 11.2.0.2.0 Production on Wed Jul 3 15:04:51 2019
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> @C:\oraclexe\app\oracle\product\11.2.0\server\rdbms\admin\utlsampl
+Disconnected from Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+C:\Users\kkwtp-pc>SQLPLUS SCOTT/TIGER
+
+SQL*Plus: Release 11.2.0.2.0 Production on Wed Jul 3 15:05:00 2019
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+ERROR:
+ORA-01017: invalid username/password; logon denied
+
+
+Enter user-name: SCOTT
+Enter password:
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> CREATE VIEW dept20 AS
+  2  SELECT * FROM emp
+  3  WHERE deptno= 20;
+CREATE VIEW dept20 AS
+            *
+ERROR at line 1:
+ORA-01031: insufficient privileges
+
+
+SQL> conn system
+Enter password:
+Connected.
+SQL> GRANT CREATE VIEW TO SCOTT;
+
+Grant succeeded.
+
+SQL> CREATE VIEW dept20 AS
+  2  SELECT * FROM emp
+  3  WHERE deptno= 20;
+SELECT * FROM emp
+              *
+ERROR at line 2:
+ORA-00942: table or view does not exist
+
+
+SQL> CONN SCOTT
+Enter password:
+Connected.
+SQL> SELECT * FROM emp
+  2  ;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800
+        20
+
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300
+        30
+
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975
+        20
+
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400
+        30
+
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450
+        10
+
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000
+        20
+
+      7839 KING       PRESIDENT            17-NOV-81       5000
+        10
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0
+        30
+
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100
+        20
+
+      7900 JAMES      CLERK           7698 03-DEC-81        950
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7902 FORD       ANALYST         7566 03-DEC-81       3000
+        20
+
+      7934 MILLER     CLERK           7782 23-JAN-82       1300
+        10
+
+
+14 rows selected.
+
+SQL> CREATE VIEW dept20 AS
+  2  SELECT * FROM emp
+  3  WHERE deptno= 20;
+
+View created.
+
+SQL> describe dept20;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                     NOT NULL NUMBER(4)
+ ENAME                                              VARCHAR2(10)
+ JOB                                                VARCHAR2(9)
+ MGR                                                NUMBER(4)
+ HIREDATE                                           DATE
+ SAL                                                NUMBER(7,2)
+ COMM                                               NUMBER(7,2)
+ DEPTNO                                             NUMBER(2)
+
+SQL> CREATE VIEW empview
+  2  empno, ename, sal, deptno, dname
+  3  AS
+  4  SELECT * FROM EMP;
+empno, ename, sal, deptno, dname
+*
+ERROR at line 2:
+ORA-00905: missing keyword
+
+
+SQL> CREATE VIEW empview
+  2  empno, ename, sal, deptno, dept.dname
+  3  AS
+  4  SELECT * FROM EMP;
+empno, ename, sal, deptno, dept.dname
+*
+ERROR at line 2:
+ORA-00905: missing keyword
+
+
+SQL> CREATE VIEW empview
+  2  empno, ename, sal, deptno, dept.dname
+  3  AS
+  4  SELECT * FROM EMP, dept;
+empno, ename, sal, deptno, dept.dname
+*
+ERROR at line 2:
+ORA-00905: missing keyword
+
+
+SQL> CREATE VIEW empview
+  2  emp.empno, emp.ename, emp.sal, emp.deptno, dept.dname
+  3  AS
+  4  SELECT * FROM EMP, dept;
+emp.empno, emp.ename, emp.sal, emp.deptno, dept.dname
+*
+ERROR at line 2:
+ORA-00905: missing keyword
+
+
+SQL>
+SQL> SQL> CREATE VIEW empview as
+SP2-0734: unknown command beginning "SQL> CREAT..." - rest of line ignored.
+SQL> SELECT empno, ename, sal, EMP.deptno, dname
+  2  FROM INNER JOIN DEPT
+  3  ON EMP.DEPTNO= DEPT.DEPTNO;CREATE VIEW empview as
+  4  SELECT empno, ename, sal, EMP.deptno, dname
+  5  FROM INNER JOIN DEPT
+  6  ON EMP.DEPTNO= DEPT.DEPTNO;
+ON EMP.DEPTNO= DEPT.DEPTNO;CREATE VIEW empview as
+                          *
+ERROR at line 3:
+ORA-00911: invalid character
+
+
+SQL> CREATE VIEW empview as
+  2  SELECT empno, ename, sal, EMP.deptno, dname
+  3  FROM INNER JOIN DEPT
+  4  ON EMP.DEPTNO= DEPT.DEPTNO;
+FROM INNER JOIN DEPT
+     *
+ERROR at line 3:
+ORA-00942: table or view does not exist
+
+
+SQL> CREATE VIEW empview as
+  2  SELECT empno, ename, sal, EMP.deptno, dname
+  3  FROM  EMP INNER JOIN DEPT
+  4  ON EMP.DEPTNO= DEPT.DEPTNO;
+
+View created.
+
+SQL> SELECT TEXT FROM user_views WHERE view_name= 'EMPVIEW';
+
+TEXT
+--------------------------------------------------------------------------------
+SELECT empno, ename, sal, EMP.deptno, dname
+FROM  EMP INNER JOIN DEPT
+ON EMP.DEP
+
+
+SQL> SET LONG 1000
+SQL> SELECT TEXT FROM user_views WHERE view_name= 'EMPVIEW';
+
+TEXT
+--------------------------------------------------------------------------------
+SELECT empno, ename, sal, EMP.deptno, dname
+FROM  EMP INNER JOIN DEPT
+ON EMP.DEPTNO= DEPT.DEPTNO
+
+
+SQL> REPLACE EMPVIEW AS
+SP2-0734: unknown command beginning "REPLACE EM..." - rest of line ignored.
+SQL> REPLACE EMPVIEW AS SELECT ENO, ENAME, SAL, DNO,DNAME FROM EMP INNER JOIN DEPT ON EMP.DEPTNO= DEPT.DEPTNO;
+SP2-0734: unknown command beginning "REPLACE EM..." - rest of line ignored.
+SQL>
+SQL> CREATE OR REPLACE VIEW empview(dno, ename, sa, dno, dname) AS
+  2  SELECT empno, ename, sal, emp.deptno, dname FROM emp INNER JOIN dept
+  3  ON emp.deptno= dept.deptno;
+CREATE OR REPLACE VIEW empview(dno, ename, sa, dno, dname) AS
+                                               *
+ERROR at line 1:
+ORA-00957: duplicate column name
+
+
+SQL> CREATE OR REPLACE VIEW empview(eno, ename, sa, dno, dname) AS
+  2  SELECT empno, ename, sal, emp.deptno, dname FROM emp INNER JOIN dept
+  3  ON emp.deptno= dept.deptno;
+
+View created.
+
+SQL> SELECT * FROM empview WHERE DNO= 20;
+
+       ENO ENAME              SA        DNO DNAME
+---------- ---------- ---------- ---------- --------------
+      7369 SMITH             800         20 RESEARCH
+      7566 JONES            2975         20 RESEARCH
+      7788 SCOTT            3000         20 RESEARCH
+      7876 ADAMS            1100         20 RESEARCH
+      7902 FORD             3000         20 RESEARCH
+
+SQL> CREATE OR REPLACE VIEW DEPT20 AS
+  2  SELECT EMPNO, ENAME, SAL, JOB, HIREDATE, DEPTNO
+  3  FROM EMP WHERE DEPTNO= 20;
+
+View created.
+
+SQL> //SIMPLE VIEW
+
+View created.
+
+SQL> SELECT * FROM DEPT20;
+
+     EMPNO ENAME             SAL JOB       HIREDATE      DEPTNO
+---------- ---------- ---------- --------- --------- ----------
+      7369 SMITH             800 CLERK     17-DEC-80         20
+      7566 JONES            2975 MANAGER   02-APR-81         20
+      7788 SCOTT            3000 ANALYST   19-APR-87         20
+      7876 ADAMS            1100 CLERK     23-MAY-87         20
+      7902 FORD             3000 ANALYST   03-DEC-81         20
+
+SQL> UPDATE DEPT20 SET DEPTNO= 10 WHERE EMPNO= 7369;
+
+1 row updated.
+
+SQL> SELECT * FROM DEPT20;
+
+     EMPNO ENAME             SAL JOB       HIREDATE      DEPTNO
+---------- ---------- ---------- --------- --------- ----------
+      7566 JONES            2975 MANAGER   02-APR-81         20
+      7788 SCOTT            3000 ANALYST   19-APR-87         20
+      7876 ADAMS            1100 CLERK     23-MAY-87         20
+      7902 FORD             3000 ANALYST   03-DEC-81         20
+
+SQL> ROLLBACK;
+
+Rollback complete.
+
+SQL> SELECT * FROM DEPT20;
+
+     EMPNO ENAME             SAL JOB       HIREDATE      DEPTNO
+---------- ---------- ---------- --------- --------- ----------
+      7369 SMITH             800 CLERK     17-DEC-80         20
+      7566 JONES            2975 MANAGER   02-APR-81         20
+      7788 SCOTT            3000 ANALYST   19-APR-87         20
+      7876 ADAMS            1100 CLERK     23-MAY-87         20
+      7902 FORD             3000 ANALYST   03-DEC-81         20
+
+SQL> CREATE OR REPLACE VIEW DEPT20 AS CREATE OR REPLACE VIEW DEPT20 AS
+  2  SELECT EMPNO, ENAME, SAL, JOB, HIREDATE, DEPTNO
+  3  FROM EMP WHERE DEPTNO= 20
+  4  WITH CHECK OPTION;
+CREATE OR REPLACE VIEW DEPT20 AS CREATE OR REPLACE VIEW DEPT20 AS
+                                 *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword
+
+
+SQL> CREATE OR REPLACE VIEW DEPT20 AS
+  2  SELECT EMPNO, ENAME, SAL, JOB, HIREDATE, DEPTNO
+  3  FROM EMP WHERE DEPTNO= 20
+  4  WITH CHECK OPTION;
+
+View created.
+
+SQL> UPDATE DEPT20 SET DEPTNO= 10 WHERE EMPNO= 7369;
+UPDATE DEPT20 SET DEPTNO= 10 WHERE EMPNO= 7369
+       *
+ERROR at line 1:
+ORA-01402: view WITH CHECK OPTION where-clause violation
+
+
+SQL> CREATE TABLE TEST1
+  2  (A NUMBER(2) PRIMARY KEY,)
+  3  B VARCHAR(10) CONSTRAINT unq_test1_b UNIQUE,
+  4  C NUMBER(2) CONSTRAINT chk_test1_c CHECK(C> 5),
+  5  D NUMBER(3) REFERENCES DEPT(DEPTNO));
+(A NUMBER(2) PRIMARY KEY,)
+                         *
+ERROR at line 2:
+ORA-00904: : invalid identifier
+
+
+SQL> CREATE TABLE TEST1
+  2  (A NUMBER(2) PRIMARY KEY,
+  3  B VARCHAR(10) CONSTRAINT unq_test1_b UNIQUE,
+  4  C NUMBER(2) CONSTRAINT chk_test1_c CHECK(C> 5),
+  5  D NUMBER(3) REFERENCES DEPT(DEPTNO));
+
+Table created.
+
+SQL> DESC TEST1
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ A                                         NOT NULL NUMBER(2)
+ B                                                  VARCHAR2(10)
+ C                                                  NUMBER(2)
+ D                                                  NUMBER(3)
+
+SQL> SELECT CONSTRAINT_NAME, CONSTRAINT_TYPE, SEARCH_CONDITION, GENERATED, STATUS
+  2  FROM USER_CONSTRAINTS WHERE TABLE_NAME= 'TEST1';
+
+CONSTRAINT_NAME                C
+------------------------------ -
+SEARCH_CONDITION
+--------------------------------------------------------------------------------
+GENERATED      STATUS
+-------------- --------
+CHK_TEST1_C                    C
+C> 5
+USER NAME      ENABLED
+
+SYS_C007020                    P
+
+GENERATED NAME ENABLED
+
+CONSTRAINT_NAME                C
+------------------------------ -
+SEARCH_CONDITION
+--------------------------------------------------------------------------------
+GENERATED      STATUS
+-------------- --------
+
+UNQ_TEST1_B                    U
+
+USER NAME      ENABLED
+
+SYS_C007022                    R
+
+
+CONSTRAINT_NAME                C
+------------------------------ -
+SEARCH_CONDITION
+--------------------------------------------------------------------------------
+GENERATED      STATUS
+-------------- --------
+GENERATED NAME ENABLED
+
+
+SQL> COLUMN CONSTRAINT_NAME FORMAT A20
+SQL> COLUMN SEARCH_CONDITION FORMAT A20
+SQL> SELECT CONSTRAINT_NAME, CONSTRAINT_TYPE, SEARCH_CONDITION, GENERATED, STATUS
+  2  FROM USER_CONSTRAINTS WHERE TABLE_NAME= 'TEST1';
+
+CONSTRAINT_NAME      C SEARCH_CONDITION     GENERATED      STATUS
+-------------------- - -------------------- -------------- --------
+CHK_TEST1_C          C C> 5                 USER NAME      ENABLED
+SYS_C007020          P                      GENERATED NAME ENABLED
+UNQ_TEST1_B          U                      USER NAME      ENABLED
+SYS_C007022          R                      GENERATED NAME ENABLED
+
+SQL> ALTER TABLE TEST1 DISABLE CONSTRAINT UNQ_TEST1_B;
+
+Table altered.
+
+SQL> SELECT CONSTRAINT_NAME, CONSTRAINT_TYPE, SEARCH_CONDITION, GENERATED, STATUS
+  2  FROM USER_CONSTRAINTS WHERE TABLE_NAME= 'TEST1';
+
+CONSTRAINT_NAME      C SEARCH_CONDITION     GENERATED      STATUS
+-------------------- - -------------------- -------------- --------
+CHK_TEST1_C          C C> 5                 USER NAME      ENABLED
+SYS_C007020          P                      GENERATED NAME ENABLED
+UNQ_TEST1_B          U                      USER NAME      DISABLED
+SYS_C007022          R                      GENERATED NAME ENABLED
+
+SQL> ALTER TABLE TEST1 DROP CONSTRAINT SYS_C07022;
+ALTER TABLE TEST1 DROP CONSTRAINT SYS_C07022
+                                  *
+ERROR at line 1:
+ORA-02443: Cannot drop constraint  - nonexistent constraint
+
+
+SQL> ALTER TABLE TEST1 DROP CONSTRAINT SYS_C007022;
+
+Table altered.
+
+SQL>
+SQL> ALTER TABLE TEST1 ADD E VARCHAR2(12) NOT NULL;
+
+Table altered.
+
+SQL> DESC TEST1;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ A                                         NOT NULL NUMBER(2)
+ B                                                  VARCHAR2(10)
+ C                                                  NUMBER(2)
+ D                                                  NUMBER(3)
+ E                                         NOT NULL VARCHAR2(12)
+
+SQL> ALTER TABLE TEST1 MODIFY E VARCHAR2(25);
+
+Table altered.
+
+SQL> DESC TEST1;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ A                                         NOT NULL NUMBER(2)
+ B                                                  VARCHAR2(10)
+ C                                                  NUMBER(2)
+ D                                                  NUMBER(3)
+ E                                         NOT NULL VARCHAR2(25)
+
+SQL> ALTER TABLE DEPT PRIMARY KEY;
+ALTER TABLE DEPT PRIMARY KEY
+                 *
+ERROR at line 1:
+ORA-01735: invalid ALTER TABLE option
+
+
+SQL> CREATE SEQUENCE ABCD;
+
+Sequence created.
+
+SQL> SELECT ABCD.NEXTVAR FROM DUAL;
+SELECT ABCD.NEXTVAR FROM DUAL
+       *
+ERROR at line 1:
+ORA-00904: "ABCD"."NEXTVAR": invalid identifier
+
+
+SQL> SELECT ABCD.NEXTVAL FROM DUAL;
+
+   NEXTVAL
+----------
+         1
+
+SQL> SELECT ABCD.NEXTVAL FROM DUAL;
+
+   NEXTVAL
+----------
+         2
+
+SQL> SELECT ABCD.NEXTVAL FROM DUAL;
+
+   NEXTVAL
+----------
+         3
+
+SQL> SELECT ABCD.NEXTVAL FROM DUAL;
+
+   NEXTVAL
+----------
+         4
+
+SQL> SELECT ABCD.NEXTVAL FROM DUAL;
+
+   NEXTVAL
+----------
+         5
+
+SQL> SELECT ABCD.NEXTVAL FROM DUAL;
+
+   NEXTVAL
+----------
+         6
+
+SQL> SELECT ABCD.NEXTVAL FROM DUAL;
+
+   NEXTVAL
+----------
+         7
+
+SQL> SELECT ABCD.NEXTVAL FROM DUAL;
+
+   NEXTVAL
+----------
+         8
+
+SQL> SELECT ABCD.NEXTVAL FROM DUAL;
+
+   NEXTVAL
+----------
+         9
+
+SQL> SELECT ABCD.NEXTVAL FROM DUAL;
+
+   NEXTVAL
+----------
+        10
+
+SQL> SELECT ABCD.CURRVAL FROM DUAL;
+
+   CURRVAL
+----------
+        10
+
+SQL> SELECT ABCD.NEXTVAL FROM DUAL;
+
+   NEXTVAL
+----------
+        11
+
+SQL> SELECT ABCD.CURRVAL FROM DUAL;
+
+   CURRVAL
+----------
+        11
+
+SQL> SELECT ROWID FROM EMP;
+
+ROWID
+------------------
+AAAE6DAABAAALC5AAA
+AAAE6DAABAAALC5AAB
+AAAE6DAABAAALC5AAC
+AAAE6DAABAAALC5AAD
+AAAE6DAABAAALC5AAE
+AAAE6DAABAAALC5AAF
+AAAE6DAABAAALC5AAG
+AAAE6DAABAAALC5AAH
+AAAE6DAABAAALC5AAI
+AAAE6DAABAAALC5AAJ
+AAAE6DAABAAALC5AAK
+
+ROWID
+------------------
+AAAE6DAABAAALC5AAL
+AAAE6DAABAAALC5AAM
+AAAE6DAABAAALC5AAN
+
+14 rows selected.
+
+SQL> SELECT ROWID, ENAME, SAL FROM EMP;
+
+ROWID              ENAME             SAL
+------------------ ---------- ----------
+AAAE6DAABAAALC5AAA SMITH             800
+AAAE6DAABAAALC5AAB ALLEN            1600
+AAAE6DAABAAALC5AAC WARD             1250
+AAAE6DAABAAALC5AAD JONES            2975
+AAAE6DAABAAALC5AAE MARTIN           1250
+AAAE6DAABAAALC5AAF BLAKE            2850
+AAAE6DAABAAALC5AAG CLARK            2450
+AAAE6DAABAAALC5AAH SCOTT            3000
+AAAE6DAABAAALC5AAI KING             5000
+AAAE6DAABAAALC5AAJ TURNER           1500
+AAAE6DAABAAALC5AAK ADAMS            1100
+
+ROWID              ENAME             SAL
+------------------ ---------- ----------
+AAAE6DAABAAALC5AAL JAMES             950
+AAAE6DAABAAALC5AAM FORD             3000
+AAAE6DAABAAALC5AAN MILLER           1300
+
+14 rows selected.
+
+SQL>

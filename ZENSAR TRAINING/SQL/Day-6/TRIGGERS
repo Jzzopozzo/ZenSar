@@ -1,0 +1,123 @@
+CREATE OR REPLACE TRIGGER LogChanges
+BEFORE INSERT OR UPDATE OR DELETE
+ON emp
+FOR EACH ROW
+DECLARE 
+	v_changetype CHAR(1);
+BEGIN
+	IF INSERTING THEN
+		v_changetype:= 'I';
+	ELSIF UPDATING THEN 
+		v_changetype:= 'U';
+	ELSE 
+		v_changetype:= 'D';
+	END IF;
+	dbms_output.put_line(v_changetype|| '	'|| user || '	'||  to_char(sysdate, 'DD-MON-YYYY HH:MI:SS'));
+END;
+/
+
+
+
+SQL> SET SERVEROUTPUT ON
+SQL> CREATE OR REPLACE TRIGGER LogChanges
+  2  BEFORE INSERT OR UPDATE OR DELETE
+  3  ON emp
+  4  FOR EACH ROW
+  5  DECLARE
+  6  v_changetype CHAR(1);
+  7  BEGIN
+  8  IF INSERTING THEN
+  9  v_changetype:= 'I';
+ 10  ELSIF UPDATING THEN
+ 11  v_changetype:= 'U';
+ 12  ELSE
+ 13  v_changetype:= 'D';
+ 14  END IF;
+ 15  dbms_output.put_line(v_changetype|| ''|| user || ''||  to_char(sysdate, 'DD-MON-YYYY HH:MI:SS'));
+ 16  END;
+ 17  /
+
+Trigger created.
+
+SQL> UPDATE emp SET sal= sal+ 100 WHERE deptno= 10;
+USCOTT06-JUL-2019 01:51:15
+USCOTT06-JUL-2019 01:51:15
+USCOTT06-JUL-2019 01:51:15
+USCOTT06-JUL-2019 01:51:15
+
+4 rows updated.
+
+SQL> INSERT INTO emp VALUES (1734, 'ABCD', 'STUDENT', 7989, '12-JUN-78', 5679, 0, 10);
+ISCOTT06-JUL-2019 01:51:30
+
+1 row created.
+
+SQL>  DELETE FROM emp WHERE ENAME='ABCD';
+DSCOTT06-JUL-2019 01:51:38
+
+1 row deleted.
+
+
+CREATE OR REPLACE TRIGGER LogChanges
+BEFORE INSERT OR UPDATE OR DELETE
+ON emp
+FOR EACH ROW
+DECLARE 
+	v_changetype CHAR(1);
+	v_sal NUMBER(7, 2);
+BEGIN
+	IF INSERTING THEN
+		v_changetype:= 'I';
+	ELSIF UPDATING THEN 
+		v_changetype:= 'U';
+	ELSE 
+		v_changetype:= 'D';
+	END IF;
+	SELECT sal INTO v_sal FROM emp WHERE empno= 7900;
+	dbms_output.put_line(v_changetype|| '	'|| user || '	'||  to_char(sysdate, 'DD-MON-YYYY HH:MI:SS'));
+END;
+/
+
+SQL> CREATE OR REPLACE TRIGGER LogChanges
+  2  BEFORE INSERT OR UPDATE OR DELETE
+  3  ON emp
+  4  FOR EACH ROW
+  5  DECLARE
+  6  v_changetype CHAR(1);
+  7  v_sal NUMBER(7, 2);
+  8  BEGIN
+  9  IF INSERTING THEN
+ 10  v_changetype:= 'I';
+ 11  ELSIF UPDATING THEN
+ 12  v_changetype:= 'U';
+ 13  ELSE
+ 14  v_changetype:= 'D';
+ 15  END IF;
+ 16  SELECT sal INTO v_sal FROM emp WHERE empno= 7900;
+ 17  dbms_output.put_line(v_changetype|| ''|| user || ''||  to_char(sysdate, 'DD-MON-YYYY HH:MI:SS'));
+ 18  END;
+ 19  /
+
+Trigger created.
+
+SQL> UPDATE emp SET sal= sal+ 100 WHERE deptno= 10;
+UPDATE emp SET sal= sal+ 100 WHERE deptno= 10
+       *
+ERROR at line 1:
+ORA-04091: table SCOTT.EMP is mutating, trigger/function may not see it
+ORA-06512: at "SCOTT.LOGCHANGES", line 12
+ORA-04088: error during execution of trigger 'SCOTT.LOGCHANGES'
+
+SQL> delete from emp where empno= 7900;
+delete from emp where empno= 7900
+            *
+ERROR at line 1:
+ORA-04091: table SCOTT.EMP is mutating, trigger/function may not see it
+ORA-06512: at "SCOTT.LOGCHANGES", line 12
+ORA-04088: error during execution of trigger 'SCOTT.LOGCHANGES'
+
+
+==================================================================================================================================
+CONTACT DETAILS:
+milind41100@yahoo.com
+9850387988
